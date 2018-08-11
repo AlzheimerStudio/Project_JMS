@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour {
+public class PauseMenu : MonoBehaviour
+{
 
     public static bool GamePaused = false;
+    GameManager gm;
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject keybindUI;
     [SerializeField] private AudioSource[] audioSources;
     private float[] oldVolumes;
     [SerializeField] private string menuName;
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
+
+    void Start()
+    {
+        gm = GameManager.instance;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GamePaused)
             {
@@ -25,7 +33,7 @@ public class PauseMenu : MonoBehaviour {
                 Pause();
             }
         }
-	}
+    }
 
     public void Resume()
     {
@@ -34,6 +42,7 @@ public class PauseMenu : MonoBehaviour {
             audioSources[i].volume = oldVolumes[i];
         }
         pauseUI.SetActive(false);
+        gm.movementController.RestartMovement();
         Time.timeScale = 1f;
         GamePaused = false;
     }
@@ -47,7 +56,8 @@ public class PauseMenu : MonoBehaviour {
             audioSources[i].volume = 0;
         }
         pauseUI.SetActive(true);
-        Time.timeScale = 0.000001f;
+        gm.movementController.StopMovement();
+        Time.timeScale = 0f;
         GamePaused = true;
     }
 
@@ -56,7 +66,7 @@ public class PauseMenu : MonoBehaviour {
         if (menuName != "")
         {
             SceneManager.LoadScene(menuName);
-        }        
+        }
     }
 
     public void QuitGame()
@@ -65,7 +75,7 @@ public class PauseMenu : MonoBehaviour {
         Application.Quit();
     }
 
-    public void ChangeKey()
+    public void OnGUI()
     {
         Event e = Event.current;
         if (e.isKey)

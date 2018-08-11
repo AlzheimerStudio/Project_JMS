@@ -10,8 +10,12 @@ public class MovementController : MonoBehaviour
 
     [SerializeField] private float acceleration = 1f;   // Acceleration per spacebar press
     private float currentSpeed = 0f;    // Holds current speed
+    private float oldSpeed = 0f;
+
     public float CurrentSpeed { get { return currentSpeed; } }
     bool canMove = true;
+
+    public GameObject destructionParticles;
 
     void Start()
     {
@@ -29,8 +33,11 @@ public class MovementController : MonoBehaviour
             Move();
             WrapAround();
             Friction();
-            gm.UpdateSpeedText(currentSpeed);
-            gm.UpdateDistance(currentSpeed);
+            if (gm != null)
+            {
+                gm.UpdateSpeedText(currentSpeed);
+                gm.UpdateDistance(currentSpeed);
+            }
         }
     }
 
@@ -57,9 +64,16 @@ public class MovementController : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0, float.MaxValue);
     }
 
+    public void RestartMovement()
+    {
+        canMove = true;
+        currentSpeed = oldSpeed;
+    }
+
     public void StopMovement()
     {
         canMove = false;
+        oldSpeed = currentSpeed;
         currentSpeed = 0;
     }
 
