@@ -19,6 +19,8 @@ public class MovementController : MonoBehaviour
     public float StrengthBonus { get { return _strengthBonus; } set { _strengthBonus += value; } }
     bool canMove = true;
 
+    float timeBetweenSteps = 0f;
+
     public Transform playerTransform;
     public GameObject destructionParticles;
 
@@ -48,6 +50,19 @@ public class MovementController : MonoBehaviour
             {
                 gm.UpdateSpeedText(_currentSpeed);
                 gm.UpdateDistance(_currentSpeed);
+
+                if (_currentSpeed > 0)
+                {
+                    timeBetweenSteps -= Time.deltaTime;
+                    if (timeBetweenSteps <= _currentSpeed)
+                    {
+                        if (_currentSpeed > 1)
+                            gm.audioManager.PlayPlayerAudio(2, .2f);
+                        else
+                            gm.audioManager.PlayPlayerAudio(1, .1f);
+                        timeBetweenSteps = 1f;
+                    }
+                }
             }
         }
     }
@@ -105,6 +120,7 @@ public class MovementController : MonoBehaviour
 
     public void Die()
     {
+        gm.audioManager.PlayPlayerAudio(0, 1);
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)
             Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
