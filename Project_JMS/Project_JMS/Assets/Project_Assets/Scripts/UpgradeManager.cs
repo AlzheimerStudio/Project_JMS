@@ -49,6 +49,8 @@ public class UpgradeManager : MonoBehaviour
                 upgradeStrength++;
                 movementController.StrengthBonus = 1f;
                 gm.Points -= 1 * upgradeStrength;
+                upgradeStrengthCost *= 2;
+
             }
         }
         else
