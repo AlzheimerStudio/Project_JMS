@@ -46,6 +46,7 @@ public class MovementController : MonoBehaviour
             Move();
             WrapAround();
             Friction();
+
             if (gm != null)
             {
                 gm.UpdateSpeedText(_currentSpeed);
