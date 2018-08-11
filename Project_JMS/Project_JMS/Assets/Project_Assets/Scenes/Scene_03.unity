@@ -6187,8 +6187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1529397910}
   keybindUI: {fileID: 1141881762}
-  audioSources:
-  - {fileID: 0}
+  audioSources: []
   menuName: 
 --- !u!114 &497573290
 MonoBehaviour:

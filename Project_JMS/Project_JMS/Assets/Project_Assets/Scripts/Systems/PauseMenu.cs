@@ -13,7 +13,8 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField] private string menuName;
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GamePaused)
@@ -53,7 +54,7 @@ public class PauseMenu : MonoBehaviour {
             }
         }
         pauseUI.SetActive(true);
-        Time.timeScale = 0.000001f;
+        Time.timeScale = 0f;
         GamePaused = true;
     }
 
@@ -78,10 +79,5 @@ public class PauseMenu : MonoBehaviour {
         {
             Debug.Log("Detected key: " + e.keyCode);
         }
-    }
-
-    public void BackToOptions()
-    {
-
     }
 }
