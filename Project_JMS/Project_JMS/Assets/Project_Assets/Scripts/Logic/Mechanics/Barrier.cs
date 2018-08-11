@@ -6,6 +6,7 @@ public class Barrier : MonoBehaviour
     public float speedRequired = 10f;
     public float speed = 1f;
     public float deaccelerateAmount = 1f;
+    bool barrierActivated = false;
 
     void Start()
     {
@@ -14,25 +15,30 @@ public class Barrier : MonoBehaviour
 
     void Update()
     {
-        if (transform.position == Vector3.right)
+        if (!barrierActivated)
         {
-            if (_movementController.CurrentSpeed >= speedRequired)
+            if (transform.position == Vector3.right)
             {
-                // you broke through the barrier
-                _movementController.Deaccelerate(1f);
-                Destroy(gameObject);
+                if (_movementController.CurrentSpeed >= speedRequired)
+                {
+                    // you broke through the barrier
+                    _movementController.Deaccelerate(1f);
+                    Destroy(gameObject);
 
+                }
+                else
+                {
+                    // you shall not pass
+                    _movementController.Die();
+                    _movementController.StopMovement();
+                    barrierActivated = true;
+                }
             }
             else
             {
-                // you shall not pass
-                _movementController.StopMovement();
-            }
-        }
-        else
-        {
-            MoveLeft();
+                MoveLeft();
 
+            }
         }
     }
 
