@@ -19,10 +19,10 @@ public class Barrier : MonoBehaviour
         {
             if (transform.position == Vector3.right)
             {
-                if (_movementController.CurrentSpeed >= speedRequired)
+                if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired)
                 {
                     // you broke through the barrier
-                    // _movementController.Deaccelerate(1f);
+                    // _movementController.Deaccelerate(deaccelerateAmount);
                     Destroy(gameObject);
 
                 }

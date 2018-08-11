@@ -9,10 +9,14 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Vector2 backGroundClamp = new Vector2(-10, 10);    // Clamps position of background so it never goes out of view
 
     [SerializeField] private float acceleration = 1f;   // Acceleration per spacebar press
-    private float currentSpeed = 0f;    // Holds current speed
-    private float oldSpeed = 0f;
+    private float _accelerationBonus = 0f;  // Acceleration bonus when upgraded
+    public float AccelerationBonus { set { _accelerationBonus += value; } }
 
-    public float CurrentSpeed { get { return currentSpeed; } }
+    private float _currentSpeed = 0f;    // Holds current speed
+    public float CurrentSpeed { get { return _currentSpeed; } }
+    private float _oldSpeed = 0f;   // Holds old speed (when paused etc)
+    private float _strengthBonus = 0f;  // Bonus for smashing through barriers
+    public float StrengthBonus { get { return _strengthBonus; } set { _strengthBonus += value; } }
     bool canMove = true;
 
     public Transform playerTransform;
@@ -34,15 +38,15 @@ public class MovementController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                currentSpeed += acceleration;
+                _currentSpeed += acceleration + _accelerationBonus;
             }
             Move();
             WrapAround();
             Friction();
             if (gm != null)
             {
-                gm.UpdateSpeedText(currentSpeed);
-                gm.UpdateDistance(currentSpeed);
+                gm.UpdateSpeedText(_currentSpeed);
+                gm.UpdateDistance(_currentSpeed);
             }
         }
     }
@@ -50,7 +54,7 @@ public class MovementController : MonoBehaviour
     void Move()
     {
         Vector3 newPosition = Vector3.zero;
-        newPosition.x -= currentSpeed;
+        newPosition.x -= _currentSpeed;
 
 
         backGround.Translate(newPosition);
@@ -66,8 +70,8 @@ public class MovementController : MonoBehaviour
 
     void Friction()
     {
-        currentSpeed -= Time.deltaTime / 4;
-        currentSpeed = Mathf.Clamp(currentSpeed, 0, float.MaxValue);
+        _currentSpeed -= Time.deltaTime / 4;
+        _currentSpeed = Mathf.Clamp(_currentSpeed, 0, float.MaxValue);
     }
 
     public void Reset()
@@ -79,8 +83,8 @@ public class MovementController : MonoBehaviour
             Destroy(barrier.gameObject);
         }
         backGround.position = new Vector3(-70, 0, 15);
-        oldSpeed = 0;
-        currentSpeed = 0;
+        _oldSpeed = 0;
+        _currentSpeed = 0;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         canMove = true;
     }
@@ -88,14 +92,14 @@ public class MovementController : MonoBehaviour
     public void RestartMovement()
     {
         canMove = true;
-        currentSpeed = oldSpeed;
+        _currentSpeed = _oldSpeed;
     }
 
     public void StopMovement()
     {
         canMove = false;
-        oldSpeed = currentSpeed;
-        currentSpeed = 0;
+        _oldSpeed = _currentSpeed;
+        _currentSpeed = 0;
     }
 
     public void Die()
@@ -115,6 +119,6 @@ public class MovementController : MonoBehaviour
 
     public void Deaccelerate(float deaccelerateAmount)
     {
-        currentSpeed -= deaccelerateAmount;
+        _currentSpeed -= deaccelerateAmount;
     }
 }

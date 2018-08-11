@@ -6,6 +6,7 @@ using TMPro;
 public class UpgradeManager : MonoBehaviour
 {
     GameManager gm;
+    MovementController movementController;
 
     [SerializeField] private GameObject upgradeScreen;
 
@@ -19,6 +20,7 @@ public class UpgradeManager : MonoBehaviour
     void Start()
     {
         gm = GameManager.instance;
+        this.movementController = gm.movementController;
     }
 
     public void Upgrade(string upgrade)
@@ -28,6 +30,7 @@ public class UpgradeManager : MonoBehaviour
             if (gm.Points > 0)
             {
                 upgradeVelocity++;
+                movementController.AccelerationBonus = 0.01f;
                 gm.Points--;
             }
         }
@@ -36,6 +39,7 @@ public class UpgradeManager : MonoBehaviour
             if (gm.Points > 0)
             {
                 upgradeStrength++;
+                movementController.StrengthBonus = 1f;
                 gm.Points--;
             }
         }
