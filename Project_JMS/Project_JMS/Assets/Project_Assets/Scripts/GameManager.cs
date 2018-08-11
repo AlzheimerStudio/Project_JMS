@@ -21,11 +21,13 @@ public class GameManager : MonoBehaviour
 
     public float distanceTravelled = 0;
     [HideInInspector] public int barrierNumber = 0;
-    [SerializeField] private float barrierSpawnDistance = 5000;
+    [SerializeField] private float barrierSpawnDistance = 500;
+    private float originalBarrierSpawnDistance;
 
     void Awake()
     {
         instance = this;
+        originalBarrierSpawnDistance = barrierSpawnDistance;
         if (movementController == null)
         {
             movementController = FindObjectOfType<MovementController>();
@@ -72,10 +74,19 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ToggleUpgradeManagerScreen(bool state)
+    {
+        upgradeManager.ShowUpdateScreen(state);
+    }
+
     public void Respawn()
     {
         movementController.Reset();
-        Points = (int)(distanceTravelled / 1000f);
+        Points += (int)(distanceTravelled / 1000f);
+        barrierSpawnDistance = originalBarrierSpawnDistance;
+        distanceTravelled = 0;
+        barrierNumber = 0;
+        ToggleUpgradeManagerScreen(true);
         upgradeManager.UpdateLabels();
     }
 }
