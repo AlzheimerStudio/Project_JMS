@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Barrier barrier = Instantiate(barrierPrefab, new Vector3(50, 0, 0), Quaternion.identity).GetComponent<Barrier>();
-        barrier.speedRequired *= barrierNumber + (barrierSpawnDistance / 1000);
+        barrier.speedRequired *= (barrierSpawnDistance / 1000);
         barrier.deaccelerateAmount += barrierNumber;
         barrierNumber++;
 
