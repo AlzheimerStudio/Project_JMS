@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ToggleUpgradeManagerScreen(bool state)
+    {
+        upgradeManager.ShowUpdateScreen(state);
+    }
+
     public void Respawn()
     {
         movementController.Reset();
@@ -81,6 +86,7 @@ public class GameManager : MonoBehaviour
         barrierSpawnDistance = originalBarrierSpawnDistance;
         distanceTravelled = 0;
         barrierNumber = 0;
+        ToggleUpgradeManagerScreen(true);
         upgradeManager.UpdateLabels();
     }
 }

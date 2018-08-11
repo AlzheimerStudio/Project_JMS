@@ -39,6 +39,7 @@ public class MovementController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _currentSpeed += acceleration + _accelerationBonus;
+                gm.ToggleUpgradeManagerScreen(false);
             }
             Move();
             WrapAround();
