@@ -74,6 +74,10 @@ public class MovementController : MonoBehaviour
     {
         // Resets player after death
 
+        foreach (Barrier barrier in FindObjectsOfType<Barrier>())
+        {
+            Destroy(barrier.gameObject);
+        }
         backGround.position = new Vector3(-70, 0, 15);
         oldSpeed = 0;
         currentSpeed = 0;
@@ -99,6 +103,8 @@ public class MovementController : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)
             Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
+
+        StartCoroutine(RespawnDelay(3f));
     }
 
     IEnumerator RespawnDelay(float waitTime)
