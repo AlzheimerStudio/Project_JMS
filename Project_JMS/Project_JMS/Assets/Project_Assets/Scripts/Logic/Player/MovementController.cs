@@ -17,9 +17,18 @@ public class MovementController : MonoBehaviour
             Move();
         }
 
+        WrapAround();
+
     }
 
 	void Move()
+	{
+        float newSpeed = currentSpeed + acceleration;
+
+		// backGround.Translate()
+    }
+
+	void WrapAround()
 	{
 
 	}
