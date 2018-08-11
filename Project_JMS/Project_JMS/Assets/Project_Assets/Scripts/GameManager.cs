@@ -87,6 +87,6 @@ public class GameManager : MonoBehaviour
         distanceTravelled = 0;
         barrierNumber = 0;
         ToggleUpgradeManagerScreen(true);
-        upgradeManager.UpdateLabels();
+        upgradeManager.UpdateUI();
     }
 }
