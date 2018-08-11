@@ -61,10 +61,11 @@ public class GameManager : MonoBehaviour
             Debug.LogError("No prefab specified");
             return;
         }
-        barrierNumber++;
         Barrier barrier = Instantiate(barrierPrefab, new Vector3(50, 0, 0), Quaternion.identity).GetComponent<Barrier>();
         barrier.speedRequired *= barrierNumber + (barrierSpawnDistance / 1000);
         barrier.deaccelerateAmount *= barrierNumber + (barrierSpawnDistance / 1000);
+        barrierNumber++;
+
 
     }
 }

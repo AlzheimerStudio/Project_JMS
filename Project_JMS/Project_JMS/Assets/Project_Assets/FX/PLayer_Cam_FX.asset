@@ -73,13 +73,13 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 1
-    value: 10
+    value: 8.38
   anamorphicRatio:
     overrideState: 0
     value: -0.22
   color:
     overrideState: 0
-    value: {r: 2.0157378, g: 0.68406117, b: 0, a: 1}
+    value: {r: 1.4980392, g: 0.50980395, b: 0, a: 1}
   fastMode:
     overrideState: 1
     value: 1
