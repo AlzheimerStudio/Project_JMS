@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public MovementController movementController;
     private UpgradeManager upgradeManager;
+    [HideInInspector] public AudioManager audioManager;
 
     public TMPro.TextMeshProUGUI speedText;
     public TMPro.TextMeshProUGUI distanceText;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
             movementController = FindObjectOfType<MovementController>();
         }
         upgradeManager = GetComponent<UpgradeManager>();
+        audioManager = GetComponent<AudioManager>();
     }
 
     public void UpdateSpeedText(float speed)

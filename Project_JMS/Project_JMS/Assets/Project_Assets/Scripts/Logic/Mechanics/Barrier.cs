@@ -23,6 +23,7 @@ public class Barrier : MonoBehaviour
                 {
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
+                    GameManager.instance.audioManager.PlayFXAudio(0, 1f);
                     Destroy(gameObject);
 
                 }
