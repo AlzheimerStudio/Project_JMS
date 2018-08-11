@@ -41,6 +41,7 @@ public class MovementController : MonoBehaviour
 
     void Friction()
     {
-        
+        currentSpeed -= Time.deltaTime / 4;
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, float.MaxValue);
     }
 }
