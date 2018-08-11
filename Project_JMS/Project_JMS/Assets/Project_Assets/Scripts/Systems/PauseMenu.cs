@@ -29,9 +29,12 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
-        for (int i = 0; i < audioSources.Length; i++)
+        if (audioSources.Length > 0)
         {
-            audioSources[i].volume = oldVolumes[i];
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                audioSources[i].volume = oldVolumes[i];
+            }
         }
         pauseUI.SetActive(false);
         Time.timeScale = 1f;
@@ -40,11 +43,14 @@ public class PauseMenu : MonoBehaviour {
 
     void Pause()
     {
-        oldVolumes = new float[audioSources.Length];
-        for (int i = 0; i < audioSources.Length; i++)
+        if (audioSources.Length > 0)
         {
-            oldVolumes[i] = audioSources[i].volume;
-            audioSources[i].volume = 0;
+            oldVolumes = new float[audioSources.Length];
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                oldVolumes[i] = audioSources[i].volume;
+                audioSources[i].volume = 0;
+            }
         }
         pauseUI.SetActive(true);
         Time.timeScale = 0.000001f;
