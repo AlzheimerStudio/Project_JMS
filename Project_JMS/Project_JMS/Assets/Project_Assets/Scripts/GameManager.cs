@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject barrierPrefab;
 
     private int _points = 0;
-    public int Points { get { return _points; } set { _points = value; } }
+    public int Points { get { return _points; } set { _points = value; _points = Mathf.Clamp(_points, 0, int.MaxValue); } }
 
     public float distanceTravelled = 0;
     [HideInInspector] public int barrierNumber = 0;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         if (distanceTravelled >= barrierSpawnDistance)
         {
-            Debug.Log(barrierSpawnDistance);
+            // Debug.Log(barrierSpawnDistance);
             SpawnBarrier();
             barrierSpawnDistance *= 2;
         }
