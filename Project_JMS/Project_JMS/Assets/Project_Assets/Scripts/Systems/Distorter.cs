@@ -32,7 +32,7 @@ public class Distorter : MonoBehaviour
 
     void LateUpdate()
     {
-        speed = controller.CurrentSpeed / 2;
+        speed = controller.CurrentSpeed / 4;
 
         if (volume != null)
             UpdatePostProcessingSettings();
