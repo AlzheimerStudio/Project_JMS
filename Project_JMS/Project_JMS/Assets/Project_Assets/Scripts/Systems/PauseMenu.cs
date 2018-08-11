@@ -30,15 +30,18 @@ public class PauseMenu : MonoBehaviour
     {
         if (!changingKey)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!keybindUI.activeSelf)
             {
-                if (GamePaused)
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
+                    if (GamePaused)
+                    {
+                        Resume();
+                    }
+                    else
+                    {
+                        Pause();
+                    }
                 }
             }
         }
