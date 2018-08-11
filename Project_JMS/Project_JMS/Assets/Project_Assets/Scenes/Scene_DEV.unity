@@ -9435,6 +9435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 846803125}
   - component: {fileID: 846803124}
+  - component: {fileID: 846803126}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -9453,7 +9454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb03ec866b9f7c46a64e6dd0de8881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController: {fileID: 0}
+  movementController: {fileID: 9577796}
   speedText: {fileID: 573645249}
   distanceText: {fileID: 414608631}
   gridMovement: {fileID: 743501720}
@@ -9476,6 +9477,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &846803126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846803123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cb2c0c2ec2e694389554298f9c6df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &848653514
 GameObject:
   m_ObjectHideFlags: 0
