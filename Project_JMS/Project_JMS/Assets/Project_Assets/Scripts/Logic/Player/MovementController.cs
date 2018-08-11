@@ -70,6 +70,17 @@ public class MovementController : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, 0, float.MaxValue);
     }
 
+    public void Reset()
+    {
+        // Resets player after death
+
+        backGround.position = new Vector3(-70, 0, 15);
+        oldSpeed = 0;
+        currentSpeed = 0;
+        GetComponentInChildren<SpriteRenderer>().enabled = true;
+        canMove = true;
+    }
+
     public void RestartMovement()
     {
         canMove = true;
@@ -88,6 +99,12 @@ public class MovementController : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)
             Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
+    }
+
+    IEnumerator RespawnDelay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        gm.Respawn();
     }
 
     public void Deaccelerate(float deaccelerateAmount)

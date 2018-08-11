@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(UpgradeManager))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public MovementController movementController;
+    private UpgradeManager upgradeManager;
 
     public TMPro.TextMeshProUGUI speedText;
     public TMPro.TextMeshProUGUI distanceText;
@@ -14,8 +16,8 @@ public class GameManager : MonoBehaviour
     public Transform gridMovement;
     public GameObject barrierPrefab;
 
-    private int _score = 0;
-    public int Score { get { return _score; } set { _score = value; } }
+    private int _points = 0;
+    public int Points { get { return _points; } set { _points = value; } }
 
     public float distanceTravelled = 0;
     [HideInInspector] public int barrierNumber = 0;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
         {
             movementController = FindObjectOfType<MovementController>();
         }
+        upgradeManager = GetComponent<UpgradeManager>();
     }
 
     public void UpdateSpeedText(float speed)
@@ -63,9 +66,16 @@ public class GameManager : MonoBehaviour
         }
         Barrier barrier = Instantiate(barrierPrefab, new Vector3(50, 0, 0), Quaternion.identity).GetComponent<Barrier>();
         barrier.speedRequired *= barrierNumber + (barrierSpawnDistance / 1000);
-        barrier.deaccelerateAmount += barrierNumber ;
+        barrier.deaccelerateAmount += barrierNumber;
         barrierNumber++;
 
 
+    }
+
+    public void Respawn()
+    {
+        movementController.Reset();
+        Points = (int)(distanceTravelled / 1000f);
+        upgradeManager.UpdateLabels();
     }
 }
