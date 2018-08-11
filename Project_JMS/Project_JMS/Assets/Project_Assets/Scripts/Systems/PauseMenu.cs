@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private AudioSource[] audioSources;
     private float[] oldVolumes;
     [SerializeField] private string menuName;
+<<<<<<< HEAD
 
     void Start()
     {
@@ -23,6 +24,13 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+=======
+	
+	// Update is called once per frame
+	void Update ()
+    {
+		if (Input.GetKeyDown(KeyCode.Escape))
+>>>>>>> 4994eb482c8d36d9010463c49c5a41cb04d73be7
         {
             if (GamePaused)
             {
@@ -37,9 +45,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        for (int i = 0; i < audioSources.Length; i++)
+        if (audioSources.Length > 0)
         {
-            audioSources[i].volume = oldVolumes[i];
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                audioSources[i].volume = oldVolumes[i];
+            }
         }
         pauseUI.SetActive(false);
         gm.movementController.RestartMovement();
@@ -49,14 +60,20 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        oldVolumes = new float[audioSources.Length];
-        for (int i = 0; i < audioSources.Length; i++)
+        if (audioSources.Length > 0)
         {
-            oldVolumes[i] = audioSources[i].volume;
-            audioSources[i].volume = 0;
+            oldVolumes = new float[audioSources.Length];
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                oldVolumes[i] = audioSources[i].volume;
+                audioSources[i].volume = 0;
+            }
         }
         pauseUI.SetActive(true);
+<<<<<<< HEAD
         gm.movementController.StopMovement();
+=======
+>>>>>>> 4994eb482c8d36d9010463c49c5a41cb04d73be7
         Time.timeScale = 0f;
         GamePaused = true;
     }
@@ -82,10 +99,5 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.Log("Detected key: " + e.keyCode);
         }
-    }
-
-    public void BackToOptions()
-    {
-
     }
 }
