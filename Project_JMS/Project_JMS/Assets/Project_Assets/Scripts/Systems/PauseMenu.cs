@@ -13,24 +13,17 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private AudioSource[] audioSources;
     private float[] oldVolumes;
     [SerializeField] private string menuName;
-<<<<<<< HEAD
 
     void Start()
     {
         gm = GameManager.instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-=======
-	
 	// Update is called once per frame
 	void Update ()
     {
 		if (Input.GetKeyDown(KeyCode.Escape))
->>>>>>> 4994eb482c8d36d9010463c49c5a41cb04d73be7
+
         {
             if (GamePaused)
             {
@@ -70,10 +63,8 @@ public class PauseMenu : MonoBehaviour
             }
         }
         pauseUI.SetActive(true);
-<<<<<<< HEAD
         gm.movementController.StopMovement();
-=======
->>>>>>> 4994eb482c8d36d9010463c49c5a41cb04d73be7
+
         Time.timeScale = 0f;
         GamePaused = true;
     }
