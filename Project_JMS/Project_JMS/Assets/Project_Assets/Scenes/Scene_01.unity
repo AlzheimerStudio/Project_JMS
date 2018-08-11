@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 743501720}
   backGroundClamp: {x: -10, y: 2}
-  acceleration: 0.01
+  acceleration: 0.1
 --- !u!1 &124783293
 GameObject:
   m_ObjectHideFlags: 0
