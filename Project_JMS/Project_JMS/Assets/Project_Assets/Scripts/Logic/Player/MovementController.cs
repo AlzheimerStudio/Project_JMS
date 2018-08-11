@@ -86,7 +86,8 @@ public class MovementController : MonoBehaviour
     public void Die()
     {
         GetComponentInChildren<SpriteRenderer>().enabled = false;
-        Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
+        if (destructionParticles != null)
+            Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
     }
 
     public void Deaccelerate(float deaccelerateAmount)
