@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class UpdateManager : MonoBehaviour
 {
+    // velocity - more speed up per space bar press
+    // strength - easier to break through barriers
 
-    // Use this for initialization
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 

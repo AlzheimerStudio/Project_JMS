@@ -22,7 +22,7 @@ public class Barrier : MonoBehaviour
                 if (_movementController.CurrentSpeed >= speedRequired)
                 {
                     // you broke through the barrier
-                    _movementController.Deaccelerate(1f);
+                    // _movementController.Deaccelerate(1f);
                     Destroy(gameObject);
 
                 }
