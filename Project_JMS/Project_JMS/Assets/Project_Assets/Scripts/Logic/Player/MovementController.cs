@@ -15,11 +15,17 @@ public class MovementController : MonoBehaviour
     public float CurrentSpeed { get { return currentSpeed; } }
     bool canMove = true;
 
+    public Transform playerTransform;
     public GameObject destructionParticles;
 
     void Start()
     {
         gm = GameManager.instance;
+        if (playerTransform == null)
+        {
+            Debug.LogError("No player transform specified!");
+            playerTransform = new GameObject("u forgot to put a playertransform").transform;
+        }
     }
 
     void Update()
@@ -75,6 +81,12 @@ public class MovementController : MonoBehaviour
         canMove = false;
         oldSpeed = currentSpeed;
         currentSpeed = 0;
+    }
+
+    public void Die()
+    {
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
     }
 
     public void Deaccelerate(float deaccelerateAmount)
