@@ -6,19 +6,18 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    private GameManager gm;
-    public static bool GamePaused = false;   
-    private bool changingKey = false;
+                        private GameManager gm;
+                        public static bool GamePaused = false;   
+                        private bool changingKey = false;
 
-    [SerializeField] private Button changeButton;
-    [SerializeField] private Text keyText;
-    private int oldFontSize;
+    [SerializeField]    private Button changeButton;
+    [SerializeField]    private Text keyText;
+                        private int oldFontSize;
 
-    [SerializeField] private GameObject pauseUI;
-    [SerializeField] private GameObject keybindUI;
-    [SerializeField] private AudioSource[] audioSources;
-    private float[] oldVolumes;
-    [SerializeField] private string menuName;
+    [SerializeField]    private GameObject pauseUI;
+    [SerializeField]    private GameObject keybindUI;
+    [SerializeField]    private AudioSource[] audioSources;
+                        private float[] oldVolumes;
 
     void Start()
     {
@@ -88,14 +87,6 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0f;
         GamePaused = true;
-    }
-
-    public void LoadMenu()
-    {
-        if (menuName != "")
-        {
-            SceneManager.LoadScene(menuName);
-        }
     }
 
     public void QuitGame()
