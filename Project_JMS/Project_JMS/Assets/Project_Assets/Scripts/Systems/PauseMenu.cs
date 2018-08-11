@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    private GameManager gm;
+    public static bool GamePaused = false;   
+    private bool changingKey = false;
 
-    public static bool GamePaused = false;
-    GameManager gm;
+    [SerializeField] private Button changeButton;
+    [SerializeField] private Text keyText;
+    private int oldFontSize;
+
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject keybindUI;
     [SerializeField] private AudioSource[] audioSources;
@@ -22,16 +28,28 @@ public class PauseMenu : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetKeyDown(KeyCode.Escape))
-
+        if (!changingKey)
         {
-            if (GamePaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
+                if (GamePaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
-            else
+        }
+        else
+        {
+            if (Input.anyKeyDown)
             {
-                Pause();
+                keyText.fontSize = oldFontSize;
+                keyText.text = "SPACE";
+                changeButton.interactable = true;
+                changingKey = false;
             }
         }
     }
@@ -83,12 +101,12 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnGUI()
+    public void ChangeKeyBind()
     {
-        Event e = Event.current;
-        if (e.isKey)
-        {
-            Debug.Log("Detected key: " + e.keyCode);
-        }
+        changeButton.interactable = false;
+        keyText.text = "<ANY KEY>";
+        oldFontSize = keyText.fontSize;
+        keyText.fontSize = keyText.fontSize - 10;
+        changingKey = true;
     }
 }
