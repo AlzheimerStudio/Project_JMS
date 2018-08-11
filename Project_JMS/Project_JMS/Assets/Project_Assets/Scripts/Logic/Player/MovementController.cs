@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] private Transform backGround;
-    [SerializeField] private Vector2 backGroundClamp = new Vector2(-10, 10);
+    [SerializeField] private Transform backGround;  // Background to move
+    [SerializeField] private Vector2 backGroundClamp = new Vector2(-10, 10);    // Clamps position of background so it never goes out of view
 
-    [SerializeField] private float acceleration = 1f;
-    private float currentSpeed = 0f;
+    [SerializeField] private float acceleration = 1f;   // Acceleration per spacebar press
+    private float currentSpeed = 0f;    // Holds current speed
 
 
     void Update()
