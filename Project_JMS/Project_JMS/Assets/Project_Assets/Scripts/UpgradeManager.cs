@@ -45,11 +45,11 @@ public class UpgradeManager : MonoBehaviour
         }
         else if (upgrade == "Strength")
         {
-            if (gm.Points > 0 && (gm.Points - upgradeStrengthCost >= 0))
+            if (gm.Points > 0 && gm.Points - upgradeStrengthCost >= 0)
             {
                 upgradeStrength++;
                 movementController.StrengthBonus = 0.1f;
-                gm.Points -= 1 * upgradeStrength;
+                gm.Points -= upgradeStrengthCost;
                 upgradeStrengthCost = (int)(upgradeStrength * 1.5f);
 
             }
