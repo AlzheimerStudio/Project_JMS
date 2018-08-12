@@ -19,6 +19,10 @@ public class Distorter : MonoBehaviour
     [SerializeField] private float chromAbbIntensityCap = 1f;
     [Range(0, 100)] public float chromaticIntensityModifier;
 
+    private ColorGrading colorGrading;
+    [Header("Color grading")]
+    [SerializeField] private float hueShiftCap = 180f;
+    [Range(0, 100)] public float hueShiftModifier = 1f;
 
 
     void Start()
@@ -53,8 +57,12 @@ public class Distorter : MonoBehaviour
             float newChromAbbIntensity = Mathf.RoundToInt(speed * chromaticIntensityModifier);
             newChromAbbIntensity = Mathf.Clamp(newChromAbbIntensity, 0, chromAbbIntensityCap);
             chromAbb.intensity.value = Mathf.Lerp(chromAbb.intensity.value, newChromAbbIntensity, Time.deltaTime * 10f);        // Apply manipulation on Chromatic Abberation
-            
-            
+        }
+        if (volume.profile.TryGetSettings<ColorGrading>(out colorGrading))
+        {
+            float newHueShift = Mathf.RoundToInt(speed * hueShiftModifier);
+            newHueShift = Mathf.Clamp(newHueShift, 0, hueShiftCap);
+            colorGrading.hueShift.Interp(colorGrading.hueShift.value, newHueShift, Time.deltaTime * 5f);
         }
     }
 

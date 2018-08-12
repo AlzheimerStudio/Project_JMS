@@ -19,6 +19,8 @@ public class MovementController : MonoBehaviour
     public float StrengthBonus { get { return _strengthBonus; } set { _strengthBonus += value; } }
     bool canMove = true;
 
+    public float timeSpeed = 1f;    // used for barrier slow motion
+
     float timeBetweenSteps = 0f;
 
     public Transform playerTransform;
@@ -40,7 +42,7 @@ public class MovementController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _currentSpeed += acceleration + _accelerationBonus;
+                _currentSpeed += (acceleration + _accelerationBonus);
                 gm.ToggleUpgradeManagerScreen(false);
             }
             Move();
@@ -71,7 +73,7 @@ public class MovementController : MonoBehaviour
     void Move()
     {
         Vector3 newPosition = Vector3.zero;
-        newPosition.x -= _currentSpeed;
+        newPosition.x -= _currentSpeed * timeSpeed;
 
 
         backGround.Translate(newPosition);

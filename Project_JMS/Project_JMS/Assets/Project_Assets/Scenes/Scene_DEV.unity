@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 8ddf55cb1a246104cb8e434fd8e98371,
+  m_LightingDataAsset: {fileID: 112000002, guid: b4f1b26d1d64b7b44bfc8d7ed17933b8,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3423,9 +3423,11 @@ MonoBehaviour:
   volume: {fileID: 2077165461}
   lensCap: -75
   speed: 0
-  distortionMultiplier: 100
+  distortionMultiplier: 35
   chromAbbIntensityCap: 1
   chromaticIntensityModifier: 1
+  hueShiftCap: 180
+  hueShiftModifier: 30
 --- !u!1 &2077184814
 GameObject:
   m_ObjectHideFlags: 0
