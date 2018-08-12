@@ -28,6 +28,12 @@ public class Speed_To_Anim : MonoBehaviour
 
         trailModule = ambientParticles.trails;
 
+
+
+        float speed = movementController.CurrentSpeed;
+        velocityModule.speedModifier = speed.MapRangeClamped(0f, 300f, 1f, 200f);//speed.MapRangeClamped(0f, 100f, 1f, speed*10);
+        trailModule.ratio = speed.MapRangeClamped(0f, 100f, 0f, 1f);
+
     }
 
     void Update()
@@ -38,8 +44,14 @@ public class Speed_To_Anim : MonoBehaviour
         anim.SetFloat("_Speed", speed * 10f);
 
 
-        velocityModule.speedModifier = speed.MapRangeClamped(0f, 30f, 1f, 10f);
-        trailModule.ratio = speed.MapRangeClamped(0f, 1f, 0.2f, speed / 100);
+        velocityModule.speedModifier = speed.MapRangeClamped(0f, 100f, 1f, 200f);//speed.MapRangeClamped(0f, 100f, 1f, speed*10);
+        if (speed <= 1)
+        {
+            velocityModule.speedModifier = 1f;
+        }
+
+        trailModule.ratio = speed.MapRangeClamped(0f, 50f, 0f, 1f);
+
 
         if (speed > 0 && playerTrail != null && ambientParticles != null)
         {
