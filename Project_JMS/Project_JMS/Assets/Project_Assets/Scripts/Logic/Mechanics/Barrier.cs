@@ -52,6 +52,8 @@ public class Barrier : MonoBehaviour
                     transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.Die();
                     _movementController.StopMovement();
+                    if (cameraShakeur != null)
+                        StartCoroutine(cameraShakeur.Shake(shakeDuration, shakeMagnitude));
                     barrierActivated = true;
                 }
             }

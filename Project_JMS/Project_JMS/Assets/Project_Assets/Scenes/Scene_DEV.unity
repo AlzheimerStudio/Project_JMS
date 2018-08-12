@@ -1633,6 +1633,11 @@ Prefab:
       propertyPath: playerTrail
       value: 
       objectReference: {fileID: 1433947950}
+    - target: {fileID: 114053359933334920, guid: ec4dd4127767799498b351937016cb35,
+        type: 2}
+      propertyPath: ambientParticles
+      value: 
+      objectReference: {fileID: 1119304572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4dd4127767799498b351937016cb35, type: 2}
   m_IsPrefabAsset: 0
@@ -2020,6 +2025,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 421012179}
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+--- !u!198 &1119304572 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198899075088927218, guid: 5f42355eb42b74e4a8ba3b992546dbc1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2083856894}
 --- !u!1 &1166304264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +3981,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4686850282504110, guid: 5f42355eb42b74e4a8ba3b992546dbc1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.300001
+      value: -16.23
       objectReference: {fileID: 0}
     - target: {fileID: 4686850282504110, guid: 5f42355eb42b74e4a8ba3b992546dbc1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3996,6 +4006,11 @@ Prefab:
     - target: {fileID: 4686850282504110, guid: 5f42355eb42b74e4a8ba3b992546dbc1, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198899075088927218, guid: 5f42355eb42b74e4a8ba3b992546dbc1,
+        type: 2}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 185
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f42355eb42b74e4a8ba3b992546dbc1, type: 2}
