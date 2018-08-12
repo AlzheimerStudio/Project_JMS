@@ -6,7 +6,7 @@ public class VictoryCondition : MonoBehaviour {
 
 						GameManager gm;
 						private float playerSpeed;
-						public static float speedOfLight = 299.792458f;
+						public const float speedOfLight = 299.792458f;
 	[SerializeField] 	private float victorySpeed;
 						private MovementController controller;
 

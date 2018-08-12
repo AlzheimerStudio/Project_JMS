@@ -38,7 +38,7 @@ public class UpgradeManager : MonoBehaviour
             if (gm.Points > 0 && gm.Points - upgradeVelocityCost >= 0)
             {
                 upgradeVelocity++;
-                movementController.AccelerationBonus = 0.005f;
+                movementController.AccelerationBonus = 0.01f;
                 gm.Points -= upgradeVelocityCost;
                 upgradeVelocityCost = (int)(upgradeVelocity * 1.5f);
             }
