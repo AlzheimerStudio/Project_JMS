@@ -12,7 +12,10 @@ public class Speed_To_Anim : MonoBehaviour
     [SerializeField] private ParticleSystem playerTrail;
     [SerializeField] private ParticleSystem ambientParticles;
     private ParticleSystem.VelocityOverLifetimeModule velocityModule;//settings container voor velocity over lifetime module.
+    private ParticleSystem.VelocityOverLifetimeModule velocityModule2;//settings container voor velocity over lifetime module.
+
     private ParticleSystem.TrailModule trailModule;//settings container voor trail module.
+
 
     void Start()
     {
@@ -21,6 +24,8 @@ public class Speed_To_Anim : MonoBehaviour
         playerTrail = GetComponentInChildren<ParticleSystem>();
 
         velocityModule = ambientParticles.velocityOverLifetime;
+        velocityModule2 = playerTrail.velocityOverLifetime;
+
         trailModule = ambientParticles.trails;
 
     }
@@ -33,6 +38,10 @@ public class Speed_To_Anim : MonoBehaviour
         anim.SetFloat("_Speed", speed * 10f);
 
 
+        velocityModule.speedModifier = speed.MapRangeClamped(1f, 100f, 1f, speed);
+        trailModule.ratio = speed.MapRangeClamped(0f, 1f, 0.2f, speed / 100);
+
+
         if (speed > 0 && playerTrail != null && ambientParticles != null)
         {
 
@@ -41,26 +50,14 @@ public class Speed_To_Anim : MonoBehaviour
             var shape = playerTrail.shape;
             shape.radius = Mathf.Clamp(speed.MapRangeClamped(0f, 20f, .8f, .1f), 0f, .8f);
 
-            if (speed > 1)
-            {
-                velocityModule.speedModifier = speed;
-                trailModule.ratio = 1;
-            }
-            else
-            {
-                velocityModule.speedModifier = 1;
-                trailModule.ratio = 0.2f;
+            //   velocityModule2.speedModifier = speed.MapRangeClamped(0f, 30, 0.1f, 50);
 
-            }
+
+
 
 
         }
-        else
-        {
-            velocityModule.speedModifier = 1;
-            trailModule.ratio = 0.2f;
 
-        }
     }
 
     public void ResetTrail()
