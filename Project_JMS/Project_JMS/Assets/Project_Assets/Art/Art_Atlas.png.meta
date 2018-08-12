@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: c39fa04c900560949860fcdb2e8d33fa
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Grid_Tile_01
+    21300002: Grid_right
+    21300004: Grid_left
+    21300006: Grid_full
+    21300008: Grid_Center
+    21300010: Box_normal
+    21300012: First_Stage_01
+    21300014: Barier_normal
+    21300016: Barier_dmg01
+    21300018: Barier_dmg02
+    21300020: Barier_dmg03
+    21300022: First_Stage_02
+    21300024: First_Stage_03
+    21300026: First_Stage_04
+    21300028: FireBall_01
+    21300030: FireBall_02
+    21300032: FireBall_03
+    21300034: FireBall_04
+    21300036: FireBall_05
+    21300038: LightSpeed_01
+    21300040: LightSpeed_02
+    21300042: LightSpeed_03
+    21300044: LightSpeed_04
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.48814362, y: 0.51016265}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 9}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grid_right
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 768
+        width: 13
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696e85245da91a048b1f871d6dd7a25c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grid_left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 14
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30978cb842c9a2c4cb970b3eada97296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grid_full
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62900562e38c8504dbd5a4b66eaa2abb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grid_Center
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 768
+        width: 34
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2cf70218e5c2a4fac21894d7705284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barier_normal
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 768
+        width: 29
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a9db4f892b8794cb62f74d3fa4df40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barier_dmg01
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 768
+        width: 40
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b466cd4a68a29f142a1b76a672ac787a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barier_dmg02
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 855
+        width: 39
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a669fe1c248ea11488a8373a7f66b341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barier_dmg03
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 942
+        width: 29
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24be54d559ca414086ac93467b72dd1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box_normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.9924074, y: 0.51278687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735535945e2433b4e8ee7ba4be0067cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: First_Stage_01
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 736
+        width: 54
+        height: 30
+      alignment: 9
+      pivot: {x: 1.000934, y: 0.49999797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334792b506f4ce547a6de20352e84b47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: First_Stage_02
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 736
+        width: 55
+        height: 30
+      alignment: 9
+      pivot: {x: 0.9953139, y: 0.5063924}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfa680b86ef163439f9b9d18f385e25
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: First_Stage_03
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 736
+        width: 54
+        height: 30
+      alignment: 9
+      pivot: {x: 1.0044863, y: 0.49999797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835f54f462cd0ce47a85785bcd88d763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: First_Stage_04
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 736
+        width: 44
+        height: 30
+      alignment: 9
+      pivot: {x: 1.0014184, y: 0.51278687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5536a2ef99828254eae0d239002c727f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBall_01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 705
+        width: 48
+        height: 28
+      alignment: 9
+      pivot: {x: 0.99817055, y: 0.47743443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2b58ef592468c428c8de4ccf20dcda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBall_02
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 705
+        width: 47
+        height: 27
+      alignment: 9
+      pivot: {x: 0.99980485, y: 0.4453871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9427c42cf034c94381d1140942a099e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBall_03
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 706
+        width: 62
+        height: 28
+      alignment: 9
+      pivot: {x: 1.0012143, y: 0.40594918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccdf4da9c8e8102428e3ba0b20be2627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBall_04
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 704
+        width: 59
+        height: 27
+      alignment: 9
+      pivot: {x: 0.9999188, y: 0.46488896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fbe798dd8f3e6449b4b9f35f44ccc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBall_05
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 706
+        width: 79
+        height: 25
+      alignment: 9
+      pivot: {x: 1.0000317, y: 0.47472167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f15bf420b71ddb4f823e4784627366c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LightSpeed_01
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 687
+        width: 98
+        height: 8
+      alignment: 9
+      pivot: {x: 0.9989393, y: 0.54026794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a547322d69243264e9808df9f15a3986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LightSpeed_02
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 687
+        width: 79
+        height: 8
+      alignment: 9
+      pivot: {x: 1.0005805, y: 0.54026794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fdd7af4ac8ad344a1802730fa287da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LightSpeed_03
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 687
+        width: 94
+        height: 8
+      alignment: 9
+      pivot: {x: 0.99952435, y: 0.54026794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af38a115bd165c47ab024888d8451d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LightSpeed_04
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 669
+        width: 111
+        height: 8
+      alignment: 9
+      pivot: {x: 0.9994702, y: 0.5432205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad72d1ddec0ef94d8f7820129d479fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d949af462e76394459c5839e2dcae099
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
