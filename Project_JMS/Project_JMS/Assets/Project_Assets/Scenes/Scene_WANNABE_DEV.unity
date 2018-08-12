@@ -373,6 +373,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4632282233964492, guid: ec4dd4127767799498b351937016cb35, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4dd4127767799498b351937016cb35, type: 2}
   m_IsPrefabAsset: 0
@@ -992,122 +996,122 @@ Prefab:
     - target: {fileID: 114130804531184744, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114130804531184744, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114744208184369544, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114744208184369544, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114372418419079722, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114372418419079722, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114198990402933148, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114198990402933148, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114621369587062540, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114621369587062540, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114160696865857674, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114160696865857674, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114393804535510700, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114393804535510700, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114540105974049624, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114540105974049624, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114176282915552960, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114176282915552960, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114642790155700658, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114642790155700658, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114233021177823362, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114233021177823362, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114200833679558188, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114200833679558188, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224936911729805994, guid: e65dc3f6ee5fa35429f3201241ab474f,
         type: 2}
@@ -1423,6 +1427,16 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798895200435480, guid: e65dc3f6ee5fa35429f3201241ab474f,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798895200435480, guid: e65dc3f6ee5fa35429f3201241ab474f,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65dc3f6ee5fa35429f3201241ab474f, type: 2}
@@ -4143,32 +4157,39 @@ MonoBehaviour:
   chromaticIntensityModifier: 1
   hueShiftCap: 180
   hueShiftModifier: 30
-  flashTimer: 1.9
-  bigbangTimer: 2.4
   EVcurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0.79
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.7464707
+      outSlope: -0.7464707
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.20341773
     - serializedVersion: 3
-      time: 0.1
-      value: 3
-      inSlope: 4.4819326
-      outSlope: 4.4819326
+      time: 0.1837204
+      value: 1.5319272
+      inSlope: 25.285519
+      outSlope: 25.285519
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.3361503
+    - serializedVersion: 3
+      time: 0.33171338
+      value: 3.68356
+      inSlope: -0.6443917
+      outSlope: -0.6443917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.20667082
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.2
-      value: 0.79
+      time: 0.5097
+      value: 0.6209174
       inSlope: 0.428896
       outSlope: 0.428896
       tangentMode: 0
@@ -4176,22 +4197,22 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.16776314
     - serializedVersion: 3
-      time: 0.7266495
-      value: 2.677124
-      inSlope: 12.824612
-      outSlope: 12.824612
+      time: 0.6908391
+      value: 6.2639937
+      inSlope: 28.798523
+      outSlope: 28.798523
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.17464586
     - serializedVersion: 3
       time: 1
       value: 10
-      inSlope: 55.3277
-      outSlope: 55.3277
+      inSlope: 5.777181
+      outSlope: 5.777181
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.16366118
+      inWeight: 0.76812804
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
