@@ -124,6 +124,8 @@ public class MovementController : MonoBehaviour
     public void Die()
     {
         gm.audioManager.PlayPlayerAudio(0, 1);
+        gm.audioManager.ChangePitchOnMixer(1f);
+        timeSpeed = 1f;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)
             Instantiate(destructionParticles, playerTransform.position, Quaternion.Euler(-90, 0, 0));
