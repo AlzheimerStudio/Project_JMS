@@ -93,15 +93,15 @@ public class MovementController : MonoBehaviour
         {
             _currentSpeed -= Time.deltaTime / 5;
         } 
-        if (_currentSpeed > 1f && _currentSpeed <= 2.5f) 
+        else if (_currentSpeed <= 2.5f) 
         {
             _currentSpeed -= Time.deltaTime / 4;
         }
-        if (_currentSpeed > 2.5f && _currentSpeed <= 5f) 
+        else if (_currentSpeed <= 5f) 
         {
             _currentSpeed -= Time.deltaTime / 3;
         }
-        if (_currentSpeed > 5f && _currentSpeed <= 10f) 
+        else if (_currentSpeed <= 10f) 
         {
             _currentSpeed -= Time.deltaTime / 2;
         }
