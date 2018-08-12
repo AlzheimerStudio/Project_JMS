@@ -24,15 +24,17 @@ public class Barrier : MonoBehaviour
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
                     transform.position = new Vector3(2.5f, 0, 0);
-                    GameManager.instance.audioManager.PlayFXAudio(0, 1f);
                     _movementController.timeSpeed = 1f;
                     GameManager.instance.audioManager.ChangePitchOnMixer(1);
+                    GameManager.instance.audioManager.PlayFXAudio(0, 1f, 1f);
+                    Camera.main.fieldOfView = 115f;
                     Destroy(gameObject);
 
                 }
                 else
                 {
                     // you shall not pass
+                    transform.position = new Vector3(2.5f, 0, 0);
                     _movementController.Die();
                     _movementController.StopMovement();
                     barrierActivated = true;
@@ -40,7 +42,8 @@ public class Barrier : MonoBehaviour
             }
             else
             {
-                if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired)
+                if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired
+                && (_movementController.CurrentSpeed + _movementController.StrengthBonus) < GameManager.instance.barrierNumber * 4f)
                 {
                     ChangeTimeSpeed();
                 }
@@ -57,6 +60,10 @@ public class Barrier : MonoBehaviour
         if (distance <= 50 + (GameManager.instance.barrierNumber * 10))
         {
             _movementController.timeSpeed = Mathf.Abs(distance) / 50f;
+
+            Camera.main.fieldOfView = Mathf.Lerp(100f, 115f, Mathf.Abs(distance) / 50f);
+            Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 100f, 115f);
+
             GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f));
             _movementController.timeSpeed = Mathf.Clamp(_movementController.timeSpeed, 0.1f, 1f);
         }

@@ -60,9 +60,9 @@ public class MovementController : MonoBehaviour
                     if (timeBetweenSteps <= _currentSpeed)
                     {
                         if (_currentSpeed > 1)
-                            gm.audioManager.PlayPlayerAudio(2, .2f);
+                            gm.audioManager.PlayPlayerAudio(2, .2f, 1f);
                         else
-                            gm.audioManager.PlayPlayerAudio(1, .1f);
+                            gm.audioManager.PlayPlayerAudio(1, .1f, 1f);
                         timeBetweenSteps = 1f;
                     }
                 }
@@ -123,7 +123,7 @@ public class MovementController : MonoBehaviour
 
     public void Die()
     {
-        gm.audioManager.PlayPlayerAudio(0, 1);
+        gm.audioManager.PlayPlayerAudio(0, 1f, 1f);
         gm.audioManager.ChangePitchOnMixer(1f);
         timeSpeed = 1f;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
