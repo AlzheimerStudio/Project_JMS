@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 [RequireComponent(typeof(PostProcessVolume))]
@@ -23,6 +24,12 @@ public class Distorter : MonoBehaviour
     [Header("Color grading")]
     [SerializeField] private float hueShiftCap = 180f;
     [Range(0, 100)] public float hueShiftModifier = 1f;
+
+    private ColorGrading transition;
+    private float oldPostExposure;
+    [Header("Victory transition")] 
+    [SerializeField] private float flashTimer = 0.1f;
+    [SerializeField] private float bigbangTimer = 0.5f;
 
 
     void Start()
@@ -66,6 +73,19 @@ public class Distorter : MonoBehaviour
         }
     }
 
+    public IEnumerator Transition() 
+    {
+        oldPostExposure = transition.postExposure.value;
+        if (volume.profile.TryGetSettings<ColorGrading>(out transition)) 
+        {           
+            yield return new WaitForSeconds(flashTimer);
+            transition.postExposure.value = 5f;
+            yield return new WaitForSeconds(flashTimer);
+            transition.postExposure.value = oldPostExposure;
+            yield return new WaitForSeconds(bigbangTimer);
+            transition.postExposure.value = 10f;
+        }
+    }
 }
 
 

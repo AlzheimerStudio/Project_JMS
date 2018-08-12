@@ -9,10 +9,15 @@ public class VictoryCondition : MonoBehaviour {
 						public const float speedOfLight = 299.792458f;
 	[SerializeField] 	private float victorySpeed;
 						private MovementController controller;
+	[SerializeField]	private Distorter distorter;
 
 	// Use this for initialization
 	void Start () 
 	{
+		if (distorter == null) 
+		{
+			distorter = GameObject.Find("POSTPROCESSING").GetComponent<Distorter>();
+		}
 		if (victorySpeed == 0) 
 		{
 			victorySpeed = speedOfLight;
@@ -31,6 +36,7 @@ public class VictoryCondition : MonoBehaviour {
 		if (playerSpeed >= victorySpeed/10) 
 		{
 			controller.CanMove(false);
+			StartCoroutine(distorter.Transition());
 			// TODO : swap to 3D world
 		}
 	}
