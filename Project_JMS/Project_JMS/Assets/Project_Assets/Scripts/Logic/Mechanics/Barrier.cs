@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
+    public Camera mainCam;
+    public CameraShakeur cameraShakeur;
+    public float shakeDuration = 0.15f;
+    public float shakeMagnitude = 0.4f;
+
     MovementController _movementController;
     private ParticleSystem pExplosion;
     public float speedRequired = 10f;
@@ -12,6 +17,8 @@ public class Barrier : MonoBehaviour
 
     void Start()
     {
+        mainCam = Camera.main;
+        cameraShakeur = mainCam.GetComponent<CameraShakeur>();
         _movementController = GameManager.instance.movementController;
         pExplosion = GetComponentInChildren<ParticleSystem>();
         pExplosion.gameObject.SetActive(false);
@@ -36,6 +43,7 @@ public class Barrier : MonoBehaviour
                     Camera.main.fieldOfView = 115f;
 
                     StartCoroutine(DestroyWait(3.5f));
+                    StartCoroutine(cameraShakeur.Shake(shakeDuration, shakeMagnitude));
                     barrierActivated = true;
 
                 }
