@@ -10,7 +10,7 @@ public class VictoryCondition : MonoBehaviour {
 	[SerializeField] 	private float victorySpeed;
 						private MovementController controller;
 	[SerializeField]	private Distorter distorter;
-						private bool victory;
+						private bool victory = false;
 
 	// Use this for initialization
 	void Start () 
