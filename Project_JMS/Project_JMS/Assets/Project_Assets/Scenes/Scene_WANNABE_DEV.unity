@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 2085195575}
   backGroundClamp: {x: -70, y: 5.3}
-  acceleration: 0.5
+  acceleration: 0.05
   timeSpeed: 1
   playerTransform: {fileID: 207153428}
   destructionParticles: {fileID: 1558339102270860, guid: e85bfa0c337ce824ab99bfd9fa4e34c3,
@@ -2200,7 +2200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035ed1afe8aec5b46a151b63cf9fbf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victorySpeed: 20
+  victorySpeed: 0
   distorter: {fileID: 2077165463}
 --- !u!1 &931934131
 GameObject:
