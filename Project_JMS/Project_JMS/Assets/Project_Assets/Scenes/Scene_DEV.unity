@@ -1633,14 +1633,6 @@ Prefab:
       propertyPath: ambientParticles
       value: 
       objectReference: {fileID: 1092457424}
-
-      objectReference: {fileID: 1433947950}
-    - target: {fileID: 114053359933334920, guid: ec4dd4127767799498b351937016cb35,
-        type: 2}
-      propertyPath: ambientParticles
-      value: 
-      objectReference: {fileID: 1119304572}
-
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4dd4127767799498b351937016cb35, type: 2}
   m_IsPrefabAsset: 0
@@ -2033,11 +2025,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 421012179}
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
---- !u!198 &1119304572 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198899075088927218, guid: 5f42355eb42b74e4a8ba3b992546dbc1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2083856894}
 --- !u!1 &1166304264
 GameObject:
   m_ObjectHideFlags: 0
