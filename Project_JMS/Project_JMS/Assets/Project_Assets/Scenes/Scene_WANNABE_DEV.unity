@@ -1414,6 +1414,16 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 224665800472980674, guid: e65dc3f6ee5fa35429f3201241ab474f,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224665800472980674, guid: e65dc3f6ee5fa35429f3201241ab474f,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65dc3f6ee5fa35429f3201241ab474f, type: 2}
   m_IsPrefabAsset: 0
@@ -2175,7 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035ed1afe8aec5b46a151b63cf9fbf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victorySpeed: 20
+  victorySpeed: 0
   distorter: {fileID: 2077165463}
 --- !u!1 &931934131
 GameObject:
@@ -4125,7 +4135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 9577796}
   volume: {fileID: 2077165461}
-  lensCap: -75
+  lensCap: -45
   speed: 0
   distortionMultiplier: 35
   chromAbbIntensityCap: 1
