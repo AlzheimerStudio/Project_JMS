@@ -77,12 +77,22 @@ public class Distorter : MonoBehaviour
     {      
         if (volume.profile.TryGetSettings<ColorGrading>(out transition)) 
         {        
-            oldPostExposure = transition.postExposure.value;   
-            yield return new WaitForSeconds(flashTimer);
+            oldPostExposure = transition.postExposure.value;
+            yield return new WaitForSeconds(flashTimer/5);
+            transition.postExposure.value = 1f;
+            yield return new WaitForSeconds(flashTimer/5);
+            transition.postExposure.value = 1.5f;
+            yield return new WaitForSeconds(flashTimer/5);
+            transition.postExposure.value = 2.5f;
+            yield return new WaitForSeconds(flashTimer/5);
             transition.postExposure.value = 5f;
-            yield return new WaitForSeconds(flashTimer);
+            yield return new WaitForSeconds(flashTimer/6);
+            transition.postExposure.value = 2f;
+            yield return new WaitForSeconds(flashTimer/6);
             transition.postExposure.value = oldPostExposure;
-            yield return new WaitForSeconds(bigbangTimer);
+            yield return new WaitForSeconds(flashTimer/12);
+            transition.postExposure.value = 5f;
+            yield return new WaitForSeconds(bigbangTimer-flashTimer);
             transition.postExposure.value = 10f;
         }
     }
