@@ -38,7 +38,7 @@ public class UpgradeManager : MonoBehaviour
             if (gm.Points > 0 && gm.Points - upgradeVelocityCost >= 0)
             {
                 upgradeVelocity++;
-                movementController.AccelerationBonus = 0.01f;
+                movementController.AccelerationBonus = 0.005f;
                 gm.Points -= upgradeVelocityCost;
                 upgradeVelocityCost = (int)(upgradeVelocity * 1.5f);
             }
@@ -48,7 +48,7 @@ public class UpgradeManager : MonoBehaviour
             if (gm.Points > 0 && (gm.Points - upgradeStrengthCost >= 0))
             {
                 upgradeStrength++;
-                movementController.StrengthBonus = 1f;
+                movementController.StrengthBonus = 0.1f;
                 gm.Points -= 1 * upgradeStrength;
                 upgradeStrengthCost = (int)(upgradeStrength * 1.5f);
 
