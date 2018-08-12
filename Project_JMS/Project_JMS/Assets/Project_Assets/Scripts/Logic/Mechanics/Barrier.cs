@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
-    public Sprite[] sprites;
-
-    public Camera mainCam;
     public CameraShakeur cameraShakeur;
     public float shakeDuration = 0.15f;
     public float shakeMagnitude = 0.4f;
@@ -19,16 +16,10 @@ public class Barrier : MonoBehaviour
 
     void Start()
     {
-        mainCam = Camera.main;
-        cameraShakeur = mainCam.GetComponent<CameraShakeur>() ?? mainCam.gameObject.AddComponent<CameraShakeur>();
+        cameraShakeur = Camera.main.GetComponent<CameraShakeur>() ?? Camera.main.gameObject.AddComponent<CameraShakeur>();
         _movementController = GameManager.instance.movementController;
         pExplosion = GetComponentInChildren<ParticleSystem>();
         pExplosion.gameObject.SetActive(false);
-
-
-        //choose a random sprite from the barier list.
-        GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
-
     }
 
     void Update()
@@ -37,13 +28,13 @@ public class Barrier : MonoBehaviour
 
         if (!barrierActivated)
         {
-            if (transform.position.x <= 2.5f)
+            if (transform.position.x <= 4.5f)
             {
                 if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired)
                 {
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
-                    // transform.position = new Vector3(2.5f, 0, 0);
+                    // transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.timeSpeed = 1f;
                     GameManager.instance.audioManager.ChangePitchOnMixer(1f, 0f);
                     GameManager.instance.audioManager.PlayFXAudio(0, 1f, 1f);
@@ -58,7 +49,7 @@ public class Barrier : MonoBehaviour
                 else
                 {
                     // you shall not pass
-                    transform.position = new Vector3(2.5f, 0, 0);
+                    transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.Die();
                     _movementController.StopMovement();
                     barrierActivated = true;

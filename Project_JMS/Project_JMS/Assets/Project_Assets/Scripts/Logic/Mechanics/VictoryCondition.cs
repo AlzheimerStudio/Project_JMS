@@ -10,7 +10,7 @@ public class VictoryCondition : MonoBehaviour {
 	[SerializeField] 	private float victorySpeed;
 						private MovementController controller;
 	[SerializeField]	private Distorter distorter;
-						private bool victory;
+						private bool victory = false;
 
 	// Use this for initialization
 	void Start () 
@@ -35,9 +35,10 @@ public class VictoryCondition : MonoBehaviour {
 	{
 		playerSpeed = controller.CurrentSpeed;
 		if (!victory) 
-		{
+		{			
 			if (playerSpeed >= victorySpeed/10) 
 			{
+				victory = true;
 				controller.CanMove(false);
 				StartCoroutine(distorter.Transition());
 				// TODO : swap to 3D world
