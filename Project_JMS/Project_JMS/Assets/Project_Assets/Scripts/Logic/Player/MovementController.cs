@@ -101,7 +101,7 @@ public class MovementController : MonoBehaviour
         {
             _currentSpeed -= Time.deltaTime / 3;
         }
-        else if (_currentSpeed <= 10f) 
+        else
         {
             _currentSpeed -= Time.deltaTime / 2;
         }
