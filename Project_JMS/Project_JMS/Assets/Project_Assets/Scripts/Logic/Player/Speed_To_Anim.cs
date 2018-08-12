@@ -25,7 +25,7 @@ public class Speed_To_Anim : MonoBehaviour
         // Controls particle trail
         float speed = movementController.CurrentSpeed;
 
-        if (speed > 0)
+        if (speed > 0 && playerTrail != null)
         {
 
             var main = playerTrail.main;
