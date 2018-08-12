@@ -143,4 +143,9 @@ public class MovementController : MonoBehaviour
     {
         _currentSpeed -= deaccelerateAmount;
     }
+
+    public void CanMove(bool value) 
+    {
+        canMove = value;
+    }
 }
