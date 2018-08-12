@@ -35,10 +35,10 @@ public class VictoryCondition : MonoBehaviour {
 	{
 		playerSpeed = controller.CurrentSpeed;
 		if (!victory) 
-		{
-			victory = true;
+		{			
 			if (playerSpeed >= victorySpeed/10) 
 			{
+				victory = true;
 				controller.CanMove(false);
 				StartCoroutine(distorter.Transition());
 				// TODO : swap to 3D world
