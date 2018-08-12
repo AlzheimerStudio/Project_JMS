@@ -23,8 +23,10 @@ public class Barrier : MonoBehaviour
                 {
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
+                    transform.position = new Vector3(2.5f, 0, 0);
                     GameManager.instance.audioManager.PlayFXAudio(0, 1f);
                     _movementController.timeSpeed = 1f;
+                    GameManager.instance.audioManager.ChangePitchOnMixer(1);
                     Destroy(gameObject);
 
                 }
@@ -52,9 +54,10 @@ public class Barrier : MonoBehaviour
     void ChangeTimeSpeed()
     {
         float distance = 0 - transform.position.x;
-        if (distance <= 50)
+        if (distance <= 50 + (GameManager.instance.barrierNumber * 10))
         {
             _movementController.timeSpeed = Mathf.Abs(distance) / 50f;
+            GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f));
             _movementController.timeSpeed = Mathf.Clamp(_movementController.timeSpeed, 0.1f, 1f);
         }
 

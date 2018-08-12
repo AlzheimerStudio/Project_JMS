@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI speedText;
     public TMPro.TextMeshProUGUI distanceText;
 
-    public Transform gridMovement;
+    // public Transform gridMovement;
     public GameObject barrierPrefab;
 
     private int _points = 0;

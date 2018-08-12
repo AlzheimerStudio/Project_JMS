@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
+    public AudioMixer mixer;
     [SerializeField] private AudioClip[] audioClipsEffects = new AudioClip[0];
     [SerializeField] private AudioClip[] audioClipsPlayer = new AudioClip[0];
     [SerializeField] private AudioClip[] audioClipsUI = new AudioClip[0];
@@ -36,5 +37,14 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(audioClipsUI[index]);
         audioSource.pitch = 1;
 
+    }
+
+    public void ChangePitchOnMixer(float newPitch)
+    {
+        if (mixer != null)
+        {
+            newPitch = Mathf.Clamp(newPitch, 0, 10);
+            mixer.SetFloat("_Pitch", newPitch);
+        }
     }
 }
