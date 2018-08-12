@@ -41,10 +41,10 @@ public class VictoryCondition : MonoBehaviour
                 am.PlayFXAudio(1, 1f, 1f);
                 victory = true;
             }
-            lerpTime += Time.deltaTime;
+            gm.movementController.CanMove(false);
+            lerpTime += Time.deltaTime/4;
             distorter.LerpExposure(lerpTime);
 
-            // StartCoroutine(distorter.Transition());
             // TODO : swap to 3D world
         }
 
