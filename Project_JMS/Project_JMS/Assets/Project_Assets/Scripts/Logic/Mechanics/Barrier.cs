@@ -51,7 +51,7 @@ public class Barrier : MonoBehaviour
             else
             {
                 if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired
-                && (_movementController.CurrentSpeed + _movementController.StrengthBonus) < GameManager.instance.barrierNumber * 4f)
+                && _movementController.CurrentSpeed < 4f)
                 {
                     ChangeTimeSpeed();
                 }
