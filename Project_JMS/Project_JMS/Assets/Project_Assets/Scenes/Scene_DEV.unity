@@ -157,11 +157,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 2085195575}
   backGroundClamp: {x: -70, y: 5.3}
-  acceleration: 0.05
+  acceleration: 1
   timeSpeed: 1
   playerTransform: {fileID: 207153428}
   destructionParticles: {fileID: 1558339102270860, guid: e85bfa0c337ce824ab99bfd9fa4e34c3,
     type: 2}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1778602572}
+        m_MethodName: ResetTrail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &41093229
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +861,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4214417918983524, guid: 81ac1495e60e1094fa95185ef6e7c7f4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.246
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4214417918983524, guid: 81ac1495e60e1094fa95185ef6e7c7f4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -874,6 +890,11 @@ Prefab:
     - target: {fileID: 4214417918983524, guid: 81ac1495e60e1094fa95185ef6e7c7f4, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198545905178295186, guid: 81ac1495e60e1094fa95185ef6e7c7f4,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ac1495e60e1094fa95185ef6e7c7f4, type: 2}
@@ -3041,6 +3062,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763022395}
   m_CullTransparentMesh: 0
+--- !u!114 &1778602572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114053359933334920, guid: ec4dd4127767799498b351937016cb35,
+    type: 2}
+  m_PrefabInternal: {fileID: 207153427}
+  m_Script: {fileID: 11500000, guid: 3b320bd05f941ad41895381a5d471468, type: 3}
 --- !u!1001 &1932483603
 Prefab:
   m_ObjectHideFlags: 0

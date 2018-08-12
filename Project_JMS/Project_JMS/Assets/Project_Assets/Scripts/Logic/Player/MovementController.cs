@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovementController : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class MovementController : MonoBehaviour
 
     public Transform playerTransform;
     public GameObject destructionParticles;
+
+    public UnityEvent onDeath;
+    
 
     void Start()
     {
@@ -139,6 +143,7 @@ public class MovementController : MonoBehaviour
 
     public void Die()
     {
+        onDeath.Invoke();
         gm.audioManager.PlayPlayerAudio(0, 1f, 1f);
         gm.audioManager.ChangePitchOnMixer(1f, 0f);
         timeSpeed = 1f;

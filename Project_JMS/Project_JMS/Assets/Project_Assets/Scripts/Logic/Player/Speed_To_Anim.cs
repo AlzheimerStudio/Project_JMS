@@ -23,13 +23,23 @@ public class Speed_To_Anim : MonoBehaviour
         anim.SetFloat("_Speed", movementController.CurrentSpeed * 10f);
 
         // Controls particle trail
-
         float speed = movementController.CurrentSpeed;
-        var main = playerTrail.main;
-        main.startSpeed = speed.MapRangeClamped(0.1f, 30f, 0.1f, 5);
-        var shape = playerTrail.shape;
-        shape.radius = speed.MapRangeClamped(0.1f, 3f, .8f, .1f);
 
-        Debug.Log(1f.MapRangeClamped(1, 3, 0, 10));
+        if (speed > 0)
+        {
+
+            var main = playerTrail.main;
+            main.startSpeed = speed.MapRangeClamped(0f, 30f, 0.1f, 10);
+            var shape = playerTrail.shape;
+            shape.radius = Mathf.Clamp(speed.MapRangeClamped(0f, 20f, .8f, .1f), 0f, .8f);
+        }
+    }
+
+    public void ResetTrail()
+    {
+        var main = playerTrail.main;
+        main.startSpeed = 0f;
+        var shape = playerTrail.shape;
+        shape.radius = .8f;
     }
 }
