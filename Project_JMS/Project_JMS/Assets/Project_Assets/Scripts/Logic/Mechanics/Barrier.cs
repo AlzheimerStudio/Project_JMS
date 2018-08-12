@@ -57,15 +57,15 @@ public class Barrier : MonoBehaviour
     void ChangeTimeSpeed()
     {
         float distance = 0 - transform.position.x;
-        if (distance <= 50 + (GameManager.instance.barrierNumber * 10))
+        if (distance <= 50 + (GameManager.instance.barrierNumber * 20))
         {
             _movementController.timeSpeed = Mathf.Abs(distance) / 50f;
+            _movementController.timeSpeed = Mathf.Clamp(_movementController.timeSpeed, 0.1f, 1f);
 
             Camera.main.fieldOfView = Mathf.Lerp(100f, 115f, Mathf.Abs(distance) / 50f);
             Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 100f, 115f);
 
             GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f));
-            _movementController.timeSpeed = Mathf.Clamp(_movementController.timeSpeed, 0.1f, 1f);
         }
 
     }
