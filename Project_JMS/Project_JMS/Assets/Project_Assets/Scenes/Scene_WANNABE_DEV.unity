@@ -4145,6 +4145,57 @@ MonoBehaviour:
   hueShiftModifier: 30
   flashTimer: 1.9
   bigbangTimer: 2.4
+  EVcurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.79
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 3
+      inSlope: 4.4819326
+      outSlope: 4.4819326
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.79
+      inSlope: 0.428896
+      outSlope: 0.428896
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16776314
+    - serializedVersion: 3
+      time: 0.7266495
+      value: 2.677124
+      inSlope: 12.824612
+      outSlope: 12.824612
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 10
+      inSlope: 55.3277
+      outSlope: 55.3277
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16366118
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2077184814
 GameObject:
   m_ObjectHideFlags: 0
