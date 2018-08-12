@@ -36,6 +36,7 @@ public class VictoryCondition : MonoBehaviour {
 		playerSpeed = controller.CurrentSpeed;
 		if (!victory) 
 		{
+			victory = true;
 			if (playerSpeed >= victorySpeed/10) 
 			{
 				controller.CanMove(false);
