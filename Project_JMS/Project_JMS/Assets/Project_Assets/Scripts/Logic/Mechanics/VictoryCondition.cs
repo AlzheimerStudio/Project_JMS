@@ -21,7 +21,7 @@ public class VictoryCondition : MonoBehaviour {
 	void Update () 
 	{
 		playerSpeed = controller.CurrentSpeed;
-		if (playerSpeed >= victorySpeed) 
+		if (playerSpeed >= victorySpeed/10) 
 		{
 			controller.CanMove(false);
 			// TODO : swap to 3D world
