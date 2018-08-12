@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+
+[RequireComponent(typeof(Animator))]
 public class Speed_To_Anim : MonoBehaviour
 {
 

@@ -159,7 +159,7 @@ MonoBehaviour:
   backGroundClamp: {x: -70, y: 5.3}
   acceleration: 0.05
   timeSpeed: 1
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 207153428}
   destructionParticles: {fileID: 1558339102270860, guid: e85bfa0c337ce824ab99bfd9fa4e34c3,
     type: 2}
 --- !u!1 &41093229
@@ -864,7 +864,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 7b3fdae93274cb14686c37bb0468af16, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

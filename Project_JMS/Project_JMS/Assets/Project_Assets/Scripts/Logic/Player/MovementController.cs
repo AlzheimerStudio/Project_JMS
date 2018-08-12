@@ -89,7 +89,7 @@ public class MovementController : MonoBehaviour
 
     void Friction()
     {
-        _currentSpeed -= Time.deltaTime / 4;
+        _currentSpeed -= Time.deltaTime / 2;
         _currentSpeed = Mathf.Clamp(_currentSpeed, 0, float.MaxValue);
     }
 
@@ -124,7 +124,7 @@ public class MovementController : MonoBehaviour
     public void Die()
     {
         gm.audioManager.PlayPlayerAudio(0, 1f, 1f);
-        gm.audioManager.ChangePitchOnMixer(1f);
+        gm.audioManager.ChangePitchOnMixer(1f, 0f);
         timeSpeed = 1f;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)

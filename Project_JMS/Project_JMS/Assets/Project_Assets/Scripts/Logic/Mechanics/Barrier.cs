@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
     MovementController _movementController;
+    private ParticleSystem pExplosion;
     public float speedRequired = 10f;
     public float speed = 1f;
     public float deaccelerateAmount = 1f;
@@ -11,10 +13,14 @@ public class Barrier : MonoBehaviour
     void Start()
     {
         _movementController = GameManager.instance.movementController;
+        pExplosion = GetComponentInChildren<ParticleSystem>();
+        pExplosion.gameObject.SetActive(false);
     }
 
     void Update()
     {
+        MoveLeft();
+
         if (!barrierActivated)
         {
             if (transform.position.x <= 2.5f)
@@ -23,12 +29,14 @@ public class Barrier : MonoBehaviour
                 {
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
-                    transform.position = new Vector3(2.5f, 0, 0);
+                    // transform.position = new Vector3(2.5f, 0, 0);
                     _movementController.timeSpeed = 1f;
-                    GameManager.instance.audioManager.ChangePitchOnMixer(1);
+                    GameManager.instance.audioManager.ChangePitchOnMixer(1f, 0f);
                     GameManager.instance.audioManager.PlayFXAudio(0, 1f, 1f);
                     Camera.main.fieldOfView = 115f;
-                    Destroy(gameObject);
+
+                    StartCoroutine(DestroyWait(3.5f));
+                    barrierActivated = true;
 
                 }
                 else
@@ -48,10 +56,11 @@ public class Barrier : MonoBehaviour
                     ChangeTimeSpeed();
                 }
 
-                MoveLeft();
 
             }
+
         }
+
     }
 
     void ChangeTimeSpeed()
@@ -65,7 +74,7 @@ public class Barrier : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(100f, 115f, Mathf.Abs(distance) / 50f);
             Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 100f, 115f);
 
-            GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f));
+            GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f), -9f);
         }
 
     }
@@ -73,5 +82,15 @@ public class Barrier : MonoBehaviour
     void MoveLeft()
     {
         transform.Translate((Vector3.left * speed) * _movementController.CurrentSpeed * _movementController.timeSpeed);
+    }
+
+    IEnumerator DestroyWait(float time)
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        if (pExplosion != null)
+            pExplosion.gameObject.SetActive(true);
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+
     }
 }

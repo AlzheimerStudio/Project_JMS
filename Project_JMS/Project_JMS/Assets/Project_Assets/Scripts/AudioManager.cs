@@ -42,10 +42,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void ChangePitchOnMixer(float newPitch)
+    public void ChangePitchOnMixer(float newPitch, float volume)
     {
         if (mixer != null)
         {
+            mixer.SetFloat("_Volume", volume);
             newPitch = Mathf.Clamp(newPitch, 0.2f, 10);
             mixer.SetFloat("_Pitch", newPitch);
         }
