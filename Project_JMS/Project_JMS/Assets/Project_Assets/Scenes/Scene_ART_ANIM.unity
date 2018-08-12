@@ -342,18 +342,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4727200887462262, guid: ec4dd4127767799498b351937016cb35, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727200887462262, guid: ec4dd4127767799498b351937016cb35, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4727200887462262, guid: ec4dd4127767799498b351937016cb35, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114053359933334920, guid: ec4dd4127767799498b351937016cb35,
+        type: 2}
+      propertyPath: movementController
+      value: 
+      objectReference: {fileID: 9577796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4dd4127767799498b351937016cb35, type: 2}
   m_IsPrefabAsset: 0
