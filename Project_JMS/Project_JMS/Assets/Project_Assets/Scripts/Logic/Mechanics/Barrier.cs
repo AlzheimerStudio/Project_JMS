@@ -38,7 +38,10 @@ public class Barrier : MonoBehaviour
             }
             else
             {
-                ChangeTimeSpeed();
+                if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired)
+                {
+                    ChangeTimeSpeed();
+                }
 
                 MoveLeft();
 
