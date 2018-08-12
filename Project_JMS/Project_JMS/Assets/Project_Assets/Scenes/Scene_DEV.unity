@@ -1632,16 +1632,15 @@ Prefab:
         type: 2}
       propertyPath: ambientParticles
       value: 
-<<<<<<< HEAD
       objectReference: {fileID: 1092457424}
-=======
+
       objectReference: {fileID: 1433947950}
     - target: {fileID: 114053359933334920, guid: ec4dd4127767799498b351937016cb35,
         type: 2}
       propertyPath: ambientParticles
       value: 
       objectReference: {fileID: 1119304572}
->>>>>>> 4dddd025baeb989bd73437161a502f875412afae
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4dd4127767799498b351937016cb35, type: 2}
   m_IsPrefabAsset: 0
