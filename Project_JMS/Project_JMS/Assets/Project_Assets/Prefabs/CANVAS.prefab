@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 222445180665315728}
   - component: {fileID: 114130804531184744}
   m_Layer: 0
-  m_Name: TextMeshPro Text (1)
+  m_Name: Lbl_Distance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 222558238049266280}
   - component: {fileID: 114621369587062540}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: Lbl_Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2566,7 +2566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 288.8, y: 331.4}
+  m_AnchoredPosition: {x: 269.8, y: 331.4}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224207234740353582
