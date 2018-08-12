@@ -29,7 +29,7 @@ public class Speed_To_Anim : MonoBehaviour
         {
 
             var main = playerTrail.main;
-            main.startSpeed = speed.MapRangeClamped(0f, 30f, 0.1f, 10);
+            main.startSpeed = speed.MapRangeClamped(0f, 30f, 0.1f, 50);
             var shape = playerTrail.shape;
             shape.radius = Mathf.Clamp(speed.MapRangeClamped(0f, 20f, .8f, .1f), 0f, .8f);
         }

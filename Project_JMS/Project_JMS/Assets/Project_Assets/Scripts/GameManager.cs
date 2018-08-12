@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         if (speedText == null)
             return;
-        speedText.text = "Speed: " + (speed * 10f).ToString("000.000");
+        speedText.text = "Speed: " + (speed * 10f).ToString("000.00");
 
     }
 
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
 
         if (distanceText != null)
-            distanceText.text = "Distance: " + distanceTravelled.ToString("00000000.000");
+            distanceText.text = "Distance: " + distanceTravelled.ToString("00000000.00");
     }
 
     void SpawnBarrier()
