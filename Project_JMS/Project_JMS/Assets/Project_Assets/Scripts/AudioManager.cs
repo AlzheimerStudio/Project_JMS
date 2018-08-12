@@ -17,23 +17,26 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayFXAudio(int index, float audioPitch)
+    public void PlayFXAudio(int index, float audioPitch, float audioVolume)
     {
         audioSource.pitch = audioPitch;
+        audioSource.volume = audioVolume;
         audioSource.PlayOneShot(audioClipsEffects[index]);
         audioSource.pitch = 1;
 
     }
-    public void PlayPlayerAudio(int index, float audioPitch)
+    public void PlayPlayerAudio(int index, float audioPitch, float audioVolume)
     {
         audioSource.pitch = audioPitch;
+        audioSource.volume = audioVolume;
         audioSource.PlayOneShot(audioClipsPlayer[index]);
         audioSource.pitch = 1;
 
     }
-    public void PlayUIAudio(int index, float audioPitch)
+    public void PlayUIAudio(int index, float audioPitch, float audioVolume)
     {
         audioSource.pitch = audioPitch;
+        audioSource.volume = audioVolume;
         audioSource.PlayOneShot(audioClipsUI[index]);
         audioSource.pitch = 1;
 
@@ -43,7 +46,7 @@ public class AudioManager : MonoBehaviour
     {
         if (mixer != null)
         {
-            newPitch = Mathf.Clamp(newPitch, 0, 10);
+            newPitch = Mathf.Clamp(newPitch, 0.2f, 10);
             mixer.SetFloat("_Pitch", newPitch);
         }
     }
