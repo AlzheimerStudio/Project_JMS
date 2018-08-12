@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
+    public Sprite[] sprites;
+
     public Camera mainCam;
     public CameraShakeur cameraShakeur;
     public float shakeDuration = 0.15f;
@@ -22,6 +24,11 @@ public class Barrier : MonoBehaviour
         _movementController = GameManager.instance.movementController;
         pExplosion = GetComponentInChildren<ParticleSystem>();
         pExplosion.gameObject.SetActive(false);
+
+
+        //choose a random sprite from the barier list.
+        GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
+
     }
 
     void Update()
