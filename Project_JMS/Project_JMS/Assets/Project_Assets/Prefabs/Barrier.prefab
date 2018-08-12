@@ -87,7 +87,6 @@ MonoBehaviour:
   - {fileID: 21300014, guid: c39fa04c900560949860fcdb2e8d33fa, type: 3}
   - {fileID: 21300016, guid: c39fa04c900560949860fcdb2e8d33fa, type: 3}
   - {fileID: 21300018, guid: c39fa04c900560949860fcdb2e8d33fa, type: 3}
-  - {fileID: 21300020, guid: c39fa04c900560949860fcdb2e8d33fa, type: 3}
   mainCam: {fileID: 0}
   cameraShakeur: {fileID: 0}
   shakeDuration: 0.15

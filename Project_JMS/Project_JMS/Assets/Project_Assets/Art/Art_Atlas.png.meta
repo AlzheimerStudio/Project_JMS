@@ -25,6 +25,8 @@ TextureImporter:
     21300040: LightSpeed_02
     21300042: LightSpeed_03
     21300044: LightSpeed_04
+    21300046: Space_Unpressed
+    21300048: Space_pressed
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -564,6 +566,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dad72d1ddec0ef94d8f7820129d479fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Unpressed
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 147
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e859a2fb13112a94584c2819f05e94a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_pressed
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 612
+        width: 147
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57642d3064424445966b04ea4897e67
       vertices: []
       indices: 
       edges: []
