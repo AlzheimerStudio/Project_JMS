@@ -34,7 +34,7 @@ public class Barrier : MonoBehaviour
                 {
                     // you broke through the barrier
                     // _movementController.Deaccelerate(deaccelerateAmount);
-                    // transform.position = new Vector3(2.5f, 0, 0);
+                    // transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.timeSpeed = 1f;
                     GameManager.instance.audioManager.ChangePitchOnMixer(1f, 0f);
                     GameManager.instance.audioManager.PlayFXAudio(0, 1f, 1f);
@@ -49,7 +49,7 @@ public class Barrier : MonoBehaviour
                 else
                 {
                     // you shall not pass
-                    transform.position = new Vector3(2.5f, 0, 0);
+                    transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.Die();
                     _movementController.StopMovement();
                     barrierActivated = true;
