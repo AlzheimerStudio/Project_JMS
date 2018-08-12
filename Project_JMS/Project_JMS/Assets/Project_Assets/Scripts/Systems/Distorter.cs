@@ -74,10 +74,10 @@ public class Distorter : MonoBehaviour
     }
 
     public IEnumerator Transition() 
-    {
-        oldPostExposure = transition.postExposure.value;
+    {      
         if (volume.profile.TryGetSettings<ColorGrading>(out transition)) 
-        {           
+        {        
+            oldPostExposure = transition.postExposure.value;   
             yield return new WaitForSeconds(flashTimer);
             transition.postExposure.value = 5f;
             yield return new WaitForSeconds(flashTimer);
