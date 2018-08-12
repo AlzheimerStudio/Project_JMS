@@ -38,9 +38,8 @@ public class Speed_To_Anim : MonoBehaviour
         anim.SetFloat("_Speed", speed * 10f);
 
 
-        velocityModule.speedModifier = speed.MapRangeClamped(1f, 100f, 1f, speed);
+        velocityModule.speedModifier = speed.MapRangeClamped(0f, 30f, 1f, 10f);
         trailModule.ratio = speed.MapRangeClamped(0f, 1f, 0.2f, speed / 100);
-
 
         if (speed > 0 && playerTrail != null && ambientParticles != null)
         {
