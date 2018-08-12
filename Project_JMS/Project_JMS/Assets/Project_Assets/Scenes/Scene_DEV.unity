@@ -3787,8 +3787,6 @@ MonoBehaviour:
   chromaticIntensityModifier: 1
   hueShiftCap: 180
   hueShiftModifier: 30
-  flashTimer: 0.1
-  bigbangTimer: 0.5
   EVcurve:
     serializedVersion: 2
     m_Curve:
