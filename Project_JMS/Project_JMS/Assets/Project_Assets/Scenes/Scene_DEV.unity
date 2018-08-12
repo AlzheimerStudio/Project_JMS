@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeScreen: {fileID: 302747020}
-  labelPoints: {fileID: 931934133}
+  labelPoints: {fileID: 2058945495}
   labelVelocity: {fileID: 92399900}
   labelStrength: {fileID: 1381806441}
   labelToolTip: {fileID: 571128376}
@@ -3705,6 +3705,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2007752647}
   m_CullTransparentMesh: 0
+--- !u!114 &2058945495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114540105974049624, guid: e65dc3f6ee5fa35429f3201241ab474f,
+    type: 2}
+  m_PrefabInternal: {fileID: 421012179}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 --- !u!1 &2077165460
 GameObject:
   m_ObjectHideFlags: 0
