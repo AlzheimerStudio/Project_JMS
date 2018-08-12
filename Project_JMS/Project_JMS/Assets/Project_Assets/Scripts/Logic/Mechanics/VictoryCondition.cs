@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VictoryCondition : MonoBehaviour {
 
+						AudioManager am;
 						GameManager gm;
 						private float playerSpeed;
 						public const float speedOfLight = 299.792458f;
@@ -15,6 +16,10 @@ public class VictoryCondition : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		if (am == null) 
+		{
+			am = GetComponent<AudioManager>();
+		}
 		if (distorter == null) 
 		{
 			distorter = GameObject.Find("POSTPROCESSING").GetComponent<Distorter>();
@@ -39,7 +44,7 @@ public class VictoryCondition : MonoBehaviour {
 			if (playerSpeed >= victorySpeed/10) 
 			{
 				victory = true;
-				controller.CanMove(false);
+				am.PlayFXAudio(1, 1f, 1f);
 				StartCoroutine(distorter.Transition());
 				// TODO : swap to 3D world
 			}
