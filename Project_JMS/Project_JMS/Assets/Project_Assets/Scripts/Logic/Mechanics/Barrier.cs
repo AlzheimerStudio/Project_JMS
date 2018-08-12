@@ -17,7 +17,7 @@ public class Barrier : MonoBehaviour
     {
         if (!barrierActivated)
         {
-            if (transform.position == Vector3.right)
+            if (transform.position.x <= 1.75f)
             {
                 if ((_movementController.CurrentSpeed + _movementController.StrengthBonus) >= speedRequired)
                 {
@@ -45,6 +45,6 @@ public class Barrier : MonoBehaviour
 
     void MoveLeft()
     {
-        transform.Translate(Vector3.left * speed);
+        transform.Translate((Vector3.left * speed) * _movementController.CurrentSpeed);
     }
 }
