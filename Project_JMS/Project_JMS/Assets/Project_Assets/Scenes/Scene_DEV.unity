@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backGround: {fileID: 2085195575}
   backGroundClamp: {x: -70, y: 5.3}
-  acceleration: 1
+  acceleration: 0.05
   timeSpeed: 1
   playerTransform: {fileID: 207153428}
   destructionParticles: {fileID: 1558339102270860, guid: e85bfa0c337ce824ab99bfd9fa4e34c3,
