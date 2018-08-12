@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class VictoryCondition : MonoBehaviour {
 
+						GameManager gm;
 						private float playerSpeed;
-	[SerializeField] 	private float victorySpeed = 300;
+						public static float speedOfLight = 299.792458f;
+	[SerializeField] 	private float victorySpeed;
 						private MovementController controller;
 
 	// Use this for initialization
 	void Start () 
 	{
+		if (victorySpeed == 0) 
+		{
+			victorySpeed = speedOfLight;
+		}
+		gm = GameManager.instance;
 		if (controller == null) 
 		{
-			controller = GameObject.Find("[CONTROLLER]").GetComponent<MovementController>();
+			controller = gm.movementController;
 		}	
 	}
 	
