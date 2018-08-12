@@ -103,7 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95452670709154750}
-  playerTrail: {fileID: 0}
+  playerTrail: {fileID: 198758150211893602}
+  ambientParticles: {fileID: 0}
 --- !u!198 &198758150211893602
 ParticleSystem:
   m_ObjectHideFlags: 1
