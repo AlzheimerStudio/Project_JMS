@@ -12,8 +12,10 @@ public class Hide_Mouse : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-
-        mC = GameManager.instance.movementController; ;
+        if (checkSPD)
+        {
+            mC = GameManager.instance.movementController;
+        }
     }
 
     void Update()
@@ -31,7 +33,7 @@ public class Hide_Mouse : MonoBehaviour
         }
     }
 }
-  
-    
+
+
 
 
