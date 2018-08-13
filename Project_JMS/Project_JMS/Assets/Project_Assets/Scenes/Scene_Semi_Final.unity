@@ -1604,7 +1604,7 @@ MonoBehaviour:
   lensCap: -45
   speed: 0
   distortionMultiplier: 35
-  chromAbbIntensityCap: 1
+  chromAbbIntensityCap: 0.4
   chromaticIntensityModifier: 1
   hueShiftCap: 180
   hueShiftModifier: 30
