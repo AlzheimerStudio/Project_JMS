@@ -20,7 +20,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI labelPoints;
     [SerializeField] private TextMeshProUGUI labelVelocity;
     [SerializeField] private TextMeshProUGUI labelStrength;
-    [SerializeField] private TextMeshProUGUI labelToolTip;
+    [SerializeField] private TextMeshProUGUI labelToolTipCost;
     [SerializeField] private Button buttonVelocityUpgrade;
     [SerializeField] private Button buttonStrengthUpgrade;
 
@@ -62,14 +62,14 @@ public class UpgradeManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void ShowUpgradeToolTip(string tip)
+    public void UpdateUpgradeCostUI(string tip)
     {
-        if (labelToolTip != null)
+        if (labelToolTipCost != null)
         {
             if (tip == "Velocity")
-                labelToolTip.text += " " + upgradeVelocityCost.ToString();
+                labelToolTipCost.text = "Cost: " + upgradeVelocityCost.ToString();
             if (tip == "Strength")
-                labelToolTip.text += " " + upgradeStrengthCost.ToString();
+                labelToolTipCost.text = "Cost: " + upgradeStrengthCost.ToString();
         }
     }
 
