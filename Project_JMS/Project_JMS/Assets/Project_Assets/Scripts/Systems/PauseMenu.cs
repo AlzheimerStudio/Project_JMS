@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     private bool changingKey = false;
 
     [SerializeField] private Button changeButton;
-    [SerializeField] private Text keyText;
+    [SerializeField] private TextMeshProUGUI keyText;
     private int oldFontSize;
 
     [SerializeField] private GameObject pauseUI;
@@ -89,7 +90,7 @@ public class PauseMenu : MonoBehaviour
     {
         changeButton.interactable = false;
         keyText.text = "<ANY KEY>";
-        oldFontSize = keyText.fontSize;
+//        oldFontSize = keyText.fontSize;
         keyText.fontSize = keyText.fontSize - 10;
         changingKey = true;
     }
