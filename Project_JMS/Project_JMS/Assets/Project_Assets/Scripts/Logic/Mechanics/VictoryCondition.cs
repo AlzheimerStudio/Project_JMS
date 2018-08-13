@@ -49,7 +49,7 @@ public class VictoryCondition : MonoBehaviour
             }
             else if (victory)
             {
-                dissableSource.volume = dissableSource.volume - Time.deltaTime / 2;
+                dissableSource.volume = dissableSource.volume - Time.deltaTime / 3;
 
                 //Swap to 3Dworld
                 if (!levelLoading)

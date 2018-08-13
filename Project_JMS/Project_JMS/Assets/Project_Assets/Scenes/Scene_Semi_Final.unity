@@ -1358,7 +1358,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.20341773
     - serializedVersion: 3
-      time: 0.29506272
+      time: 0.059005708
       value: 0.4168052
       inSlope: -3.506596
       outSlope: -3.506596
@@ -1367,7 +1367,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.30423272
+      time: 0.13141604
       value: 4.1463714
       inSlope: 6.3761544
       outSlope: 6.3761544
@@ -1376,7 +1376,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.31565264
+      time: 0.22159277
       value: 0.4350375
       inSlope: -0.27544934
       outSlope: -0.27544934
@@ -1385,7 +1385,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.32018924
+      time: 0.25741577
       value: 4.3493934
       inSlope: 1.013416
       outSlope: 1.013416
@@ -1394,7 +1394,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.32675916
+      time: 0.27973723
       value: 0.4296382
       inSlope: 4.0122056
       outSlope: 4.0122056
@@ -1403,7 +1403,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.33274782
+      time: 0.3000839
       value: 4.4643664
       inSlope: -3.061948
       outSlope: -3.061948
@@ -1412,7 +1412,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.33611548
+      time: 0.31152564
       value: 0.45558727
       inSlope: 5.9537086
       outSlope: 5.9537086
@@ -1421,7 +1421,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.34320453
+      time: 0.33561093
       value: 4.977936
       inSlope: 10.735911
       outSlope: 10.735911
@@ -1430,7 +1430,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.34546643
+      time: 0.3409896
       value: 0.46428716
       inSlope: 15.323284
       outSlope: 15.323284
