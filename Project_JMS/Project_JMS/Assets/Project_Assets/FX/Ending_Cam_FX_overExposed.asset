@@ -133,7 +133,7 @@ MonoBehaviour:
     value: 1.04
   softKnee:
     overrideState: 1
-    value: 0.81
+    value: 0.5
   clamp:
     overrideState: 0
     value: 65472
@@ -148,7 +148,7 @@ MonoBehaviour:
     value: {r: 1.4980392, g: 0.50980395, b: 0, a: 1}
   fastMode:
     overrideState: 1
-    value: 1
+    value: 0
   dirtTexture:
     overrideState: 1
     value: {fileID: 2800000, guid: ce344e8e3836dc24d8b81a6ff3dd725f, type: 3}
@@ -1565,5 +1565,5 @@ MonoBehaviour:
     overrideState: 1
     value: 0.458
   fastMode:
-    overrideState: 1
+    overrideState: 0
     value: 0
