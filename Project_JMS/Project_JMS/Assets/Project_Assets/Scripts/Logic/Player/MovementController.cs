@@ -16,6 +16,12 @@ public class MovementController : MonoBehaviour
     private float _currentSpeed = 0f;    // Holds current speed
     public float CurrentSpeed { get { return _currentSpeed; } }
     private float _oldSpeed = 0f;   // Holds old speed (when paused etc)
+
+
+
+    private int _currentSpacebar = 0;
+    public int CurrentSpacebar { get { return _currentSpacebar; } }
+
     private float _strengthBonus = 0f;  // Bonus for smashing through barriers
     public float StrengthBonus { get { return _strengthBonus; } set { _strengthBonus += value; } }
     bool canMove = true;
@@ -47,6 +53,7 @@ public class MovementController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _currentSpeed += (acceleration + _accelerationBonus);
+                _currentSpacebar += 1;
                 gm.ToggleUpgradeManagerScreen(false);
             }
             Friction();
@@ -55,6 +62,7 @@ public class MovementController : MonoBehaviour
             {
                 gm.UpdateSpeedText(_currentSpeed);
                 gm.UpdateDistance(_currentSpeed);
+                gm.UpdateSpacebarText(_currentSpacebar);
 
                 if (_currentSpeed > 0)
                 {

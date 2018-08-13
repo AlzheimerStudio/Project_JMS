@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI speedText;
     public TMPro.TextMeshProUGUI distanceText;
+    public TMPro.TextMeshProUGUI spacebarText;
+
 
     // public Transform gridMovement;
     public GameObject barrierPrefab;
@@ -60,6 +62,15 @@ public class GameManager : MonoBehaviour
         if (distanceText != null)
             distanceText.text = "Distance: " + distanceTravelled.ToString("00000000.00");
     }
+
+    public void UpdateSpacebarText(int count)
+    {
+        if (spacebarText == null)
+            return;
+        spacebarText.text = count.ToString();
+
+    }
+
 
     void SpawnBarrier()
     {
