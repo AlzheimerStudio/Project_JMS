@@ -28,7 +28,7 @@ public class MovementController : MonoBehaviour
     public GameObject destructionParticles;
 
     public UnityEvent onDeath;
-    
+
 
     void Start()
     {
@@ -49,8 +49,6 @@ public class MovementController : MonoBehaviour
                 _currentSpeed += (acceleration + _accelerationBonus);
                 gm.ToggleUpgradeManagerScreen(false);
             }
-            Move();
-            WrapAround();
             Friction();
 
             if (gm != null)
@@ -72,6 +70,8 @@ public class MovementController : MonoBehaviour
                 }
             }
         }
+        Move();
+
     }
 
     void Move()
@@ -81,6 +81,8 @@ public class MovementController : MonoBehaviour
 
 
         backGround.Translate(newPosition);
+        WrapAround();
+
     }
 
     void WrapAround()
@@ -93,15 +95,15 @@ public class MovementController : MonoBehaviour
 
     void Friction()
     {
-        if (_currentSpeed <= 1f) 
+        if (_currentSpeed <= 1f)
         {
             _currentSpeed -= Time.deltaTime / 5;
-        } 
-        else if (_currentSpeed <= 2.5f) 
+        }
+        else if (_currentSpeed <= 2.5f)
         {
             _currentSpeed -= Time.deltaTime / 4;
         }
-        else if (_currentSpeed <= 5f) 
+        else if (_currentSpeed <= 5f)
         {
             _currentSpeed -= Time.deltaTime / 3;
         }
@@ -109,7 +111,7 @@ public class MovementController : MonoBehaviour
         {
             _currentSpeed -= Time.deltaTime / 2;
         }
-        
+
         _currentSpeed = Mathf.Clamp(_currentSpeed, 0, float.MaxValue);
     }
 
@@ -141,11 +143,16 @@ public class MovementController : MonoBehaviour
         _currentSpeed = 0;
     }
 
+    public void CanMove(bool value)
+    {
+        canMove = value;
+    }
+
     public void Die()
     {
         onDeath.Invoke();
         gm.audioManager.PlayPlayerAudio(0, 1f, 1f);
-        gm.audioManager.ChangePitchOnMixer(1f, 0f);
+        gm.audioManager.ChangePitchOnMasterMixer(1f, 0f);
         timeSpeed = 1f;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         if (destructionParticles != null)
@@ -165,8 +172,5 @@ public class MovementController : MonoBehaviour
         _currentSpeed -= deaccelerateAmount;
     }
 
-    public void CanMove(bool value) 
-    {
-        canMove = value;
-    }
+
 }

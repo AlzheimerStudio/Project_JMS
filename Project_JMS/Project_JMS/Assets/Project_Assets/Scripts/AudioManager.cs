@@ -43,7 +43,16 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void ChangePitchOnMixer(float newPitch, float volume)
+    public void PlayContinuousPlayerClip(int index, float audioPitch, float audioVolume)
+    {
+        audioSource.clip = audioClipsPlayer[index];
+        audioSource.volume = audioVolume;
+        audioSource.pitch = audioPitch;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
+
+    public void ChangePitchOnMasterMixer(float newPitch, float volume)
     {
         if (mixer != null)
         {
@@ -52,6 +61,7 @@ public class AudioManager : MonoBehaviour
             mixer.SetFloat("_Pitch", newPitch);
         }
     }
+
 
 
     public IEnumerator NextLVL(int index, string lvl)
