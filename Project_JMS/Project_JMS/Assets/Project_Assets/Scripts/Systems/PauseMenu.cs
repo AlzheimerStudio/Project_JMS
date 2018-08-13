@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private Button changeButton;
     [SerializeField] private TextMeshProUGUI keyText;
-    private int oldFontSize;
+    private float oldFontSize;
 
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject keybindUI;
@@ -90,7 +90,7 @@ public class PauseMenu : MonoBehaviour
     {
         changeButton.interactable = false;
         keyText.text = "<ANY KEY>";
-//        oldFontSize = keyText.fontSize;
+        oldFontSize = keyText.fontSize;
         keyText.fontSize = keyText.fontSize - 10;
         changingKey = true;
     }
