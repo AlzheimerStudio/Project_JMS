@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,12 +17,13 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField]    private GameObject pauseUI;
     [SerializeField]    private GameObject keybindUI;
-    [SerializeField]    private AudioSource[] audioSources;
-                        private float[] oldVolumes;
+
+    private AudioMixer mixer;
 
     void Start()
     {
         gm = GameManager.instance;
+        mixer = gm.audioManager.mixer;
     }
 
 	// Update is called once per frame
@@ -58,13 +60,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        if (audioSources.Length > 0)
-        {
-            for (int i = 0; i < audioSources.Length; i++)
-            {
-                audioSources[i].volume = oldVolumes[i];
-            }
-        }
+        mixer.SetFloat("_LowPass", 5000f);
         pauseUI.SetActive(false);
         gm.movementController.RestartMovement();
         Time.timeScale = 1f;
@@ -73,15 +69,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        if (audioSources.Length > 0)
-        {
-            oldVolumes = new float[audioSources.Length];
-            for (int i = 0; i < audioSources.Length; i++)
-            {
-                oldVolumes[i] = audioSources[i].volume;
-                audioSources[i].volume = 0;
-            }
-        }
+        mixer.SetFloat("_LowPass", 2000f);
         pauseUI.SetActive(true);
         gm.movementController.StopMovement();
 
