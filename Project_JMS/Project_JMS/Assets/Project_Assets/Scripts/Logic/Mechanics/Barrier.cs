@@ -82,7 +82,7 @@ public class Barrier : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(100f, 115f, Mathf.Abs(distance) / 50f);
             Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 100f, 115f);
 
-            GameManager.instance.audioManager.ChangePitchOnMasterMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f), -9f);
+            GameManager.instance.audioManager.ChangePitchOnMasterMixer(Mathf.Clamp(Mathf.Abs(distance) / 50f, 0.2f, 1f), -9f);
         }
 
     }
