@@ -16,7 +16,7 @@ public class ButotnPress_sprite : MonoBehaviour
     public bool useForExit = false;
     public AudioSource clipLength;
     public AudioSource turnOff;
-    public GameObject CanvasDir;
+    public GameObject objectOff;
 
     // Update is called once per frame
     void Update()
@@ -50,7 +50,7 @@ public class ButotnPress_sprite : MonoBehaviour
         if (Input.GetButtonDown("Space"))
         {
             turnOff.gameObject.SetActive(false);
-            CanvasDir.SetActive(false);
+            objectOff.SetActive(false);
             clipLength.PlayOneShot(clipLength.clip);
             yield return new WaitForSeconds(clipLength.clip.length);
             Application.Quit();

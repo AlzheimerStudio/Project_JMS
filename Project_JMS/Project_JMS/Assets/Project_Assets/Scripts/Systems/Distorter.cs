@@ -75,7 +75,7 @@ public class Distorter : MonoBehaviour
         if (volume.profile.TryGetSettings<ColorGrading>(out transition))
         {
             transition.postExposure.value = EVcurve.Evaluate(t);
-            Debug.Log(EVcurve.Evaluate(t));
+//            Debug.Log(EVcurve.Evaluate(t));
         }
     }
 }

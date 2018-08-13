@@ -97,6 +97,8 @@ public class UpgradeManager : MonoBehaviour
         if (upgradeScreen != null)
         {
             upgradeScreen.SetActive(state);
+            Cursor.visible = state;
+
         }
     }
 }

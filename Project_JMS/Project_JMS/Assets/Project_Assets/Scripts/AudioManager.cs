@@ -52,4 +52,12 @@ public class AudioManager : MonoBehaviour
             mixer.SetFloat("_Pitch", newPitch);
         }
     }
+
+
+    public IEnumerator NextLVL(int index, string lvl)
+    {
+
+        yield return new WaitForSeconds(audioClipsEffects[index].length);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(lvl);
+    }
 }

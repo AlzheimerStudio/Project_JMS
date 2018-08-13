@@ -15,6 +15,9 @@ public class VictoryCondition : MonoBehaviour
     private bool victory = false;
     float lerpTime = 0;
     [SerializeField] private AudioSource dissableSource;
+    bool levelLoading = false;//quick toggle to only fire level loading once.
+    [SerializeField] private string levelToLoad;
+
 
 
     // Use this for initialization
@@ -46,15 +49,25 @@ public class VictoryCondition : MonoBehaviour
             }
             else if (victory)
             {
-                dissableSource.volume = dissableSource.volume-Time.deltaTime/2;
+                dissableSource.volume = dissableSource.volume - Time.deltaTime / 2;
+
+                //Swap to 3Dworld
+                if (!levelLoading)
+                {
+                    levelLoading = true;
+                    StartCoroutine(GetComponent<AudioManager>().NextLVL(1, levelToLoad));
+                }
+
 
             }
             gm.movementController.CanMove(false);
             lerpTime += Time.deltaTime / 4;
             distorter.LerpExposure(lerpTime);
 
-            // TODO : swap to 3D world
+
         }
 
     }
+
+
 }
