@@ -42,6 +42,8 @@ public class VictoryCondition : MonoBehaviour
             if (!victory)
             {
                 am.PlayFXAudio(1, 1f, 1f);
+
+                StartCoroutine(Camera.main.GetComponent<CameraShakeur>().Shake(2f, 0.4f));
                 victory = true;
 
             }
