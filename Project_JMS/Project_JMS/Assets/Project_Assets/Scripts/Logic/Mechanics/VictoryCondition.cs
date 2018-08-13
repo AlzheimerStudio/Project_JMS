@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class VictoryCondition : MonoBehaviour
 {
+    public const float c = 299.792458f; // speed of light
 
     AudioManager am;
     GameManager gm;
     private float playerSpeed;
-    public const float speedOfLight = 299.792458f;
     [SerializeField] private float victorySpeed;
     private MovementController controller;
     [SerializeField] private Distorter distorter;
@@ -20,7 +20,6 @@ public class VictoryCondition : MonoBehaviour
 
 
 
-    // Use this for initialization
     void Start()
     {
         if (am == null)
@@ -28,14 +27,13 @@ public class VictoryCondition : MonoBehaviour
         if (distorter == null)
             distorter = FindObjectOfType<Distorter>();
         if (victorySpeed == 0)
-            victorySpeed = speedOfLight;
+            victorySpeed = c;
 
         gm = GameManager.instance;
         if (controller == null)
             controller = gm.movementController;
     }
 
-    // Update is called once per frame
     void Update()
     {
         playerSpeed = controller.CurrentSpeed;

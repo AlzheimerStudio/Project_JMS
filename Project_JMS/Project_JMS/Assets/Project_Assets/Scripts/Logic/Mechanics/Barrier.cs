@@ -36,7 +36,7 @@ public class Barrier : MonoBehaviour
                     // _movementController.Deaccelerate(deaccelerateAmount);
                     // transform.position = new Vector3(4.5f, 0, 0);
                     _movementController.timeSpeed = 1f;
-                    GameManager.instance.audioManager.ChangePitchOnMixer(1f, 0f);
+                    GameManager.instance.audioManager.ChangePitchOnMasterMixer(1f, 0f);
                     GameManager.instance.audioManager.PlayFXAudio(0, 1f, 1f);
                     Camera.main.fieldOfView = 115f;
 
@@ -82,7 +82,7 @@ public class Barrier : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(100f, 115f, Mathf.Abs(distance) / 50f);
             Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 100f, 115f);
 
-            GameManager.instance.audioManager.ChangePitchOnMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f), -9f);
+            GameManager.instance.audioManager.ChangePitchOnMasterMixer(Mathf.Clamp01(Mathf.Abs(distance) / 50f), -9f);
         }
 
     }
