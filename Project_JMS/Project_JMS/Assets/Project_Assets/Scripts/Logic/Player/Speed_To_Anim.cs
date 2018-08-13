@@ -12,7 +12,6 @@ public class Speed_To_Anim : MonoBehaviour
     [SerializeField] private ParticleSystem playerTrail;
     [SerializeField] private ParticleSystem ambientParticles;
     private ParticleSystem.VelocityOverLifetimeModule velocityModule;//settings container voor velocity over lifetime module.
-    private ParticleSystem.VelocityOverLifetimeModule velocityModule2;//settings container voor velocity over lifetime module.
 
     private ParticleSystem.TrailModule trailModule;//settings container voor trail module.
 
@@ -24,7 +23,6 @@ public class Speed_To_Anim : MonoBehaviour
         playerTrail = GetComponentInChildren<ParticleSystem>();
 
         velocityModule = ambientParticles.velocityOverLifetime;
-        velocityModule2 = playerTrail.velocityOverLifetime;
 
         trailModule = ambientParticles.trails;
 
@@ -61,7 +59,6 @@ public class Speed_To_Anim : MonoBehaviour
             var shape = playerTrail.shape;
             shape.radius = Mathf.Clamp(speed.MapRangeClamped(0f, 20f, .8f, .1f), 0f, .8f);
 
-            //   velocityModule2.speedModifier = speed.MapRangeClamped(0f, 30, 0.1f, 50);
 
 
 
