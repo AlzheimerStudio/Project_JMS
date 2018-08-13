@@ -8,10 +8,8 @@ public class Hide_Mouse : MonoBehaviour
     private MovementController mC;
     public bool checkSPD;
 
-    // Use this for initialization
     void Start()
     {
-        Cursor.visible = false;
         if (checkSPD)
         {
             mC = GameManager.instance.movementController;
@@ -22,7 +20,7 @@ public class Hide_Mouse : MonoBehaviour
     {
         if (checkSPD)
         {
-            if (Application.isFocused && !PauseMenu.GamePaused && mC.CurrentSpeed > 0.1)
+            if (Application.isFocused && !PauseMenu.GamePaused && mC.CurrentSpeed > 0.1f)
             {
                 Cursor.visible = false;
             }

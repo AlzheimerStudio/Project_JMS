@@ -27,7 +27,6 @@ public class PauseMenu : MonoBehaviour
         mixer = gm.audioManager.mixer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!changingKey)
