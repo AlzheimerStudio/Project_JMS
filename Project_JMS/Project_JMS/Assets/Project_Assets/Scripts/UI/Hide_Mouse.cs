@@ -11,4 +11,12 @@ public class Hide_Mouse : MonoBehaviour
         Cursor.visible = false;
     }
 
+    void Update()
+    {
+        if (Application.isFocused && !PauseMenu.GamePaused)
+        {
+            Cursor.visible = false;
+        }
+    }
+
 }
