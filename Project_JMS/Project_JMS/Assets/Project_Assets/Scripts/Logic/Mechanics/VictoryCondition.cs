@@ -14,6 +14,8 @@ public class VictoryCondition : MonoBehaviour
     [SerializeField] private Distorter distorter;
     private bool victory = false;
     float lerpTime = 0;
+    [SerializeField] private AudioSource dissableSource;
+
 
     // Use this for initialization
     void Start()
@@ -40,9 +42,15 @@ public class VictoryCondition : MonoBehaviour
             {
                 am.PlayFXAudio(1, 1f, 1f);
                 victory = true;
+
+            }
+            else if (victory)
+            {
+                dissableSource.volume = dissableSource.volume-Time.deltaTime/2;
+
             }
             gm.movementController.CanMove(false);
-            lerpTime += Time.deltaTime/4;
+            lerpTime += Time.deltaTime / 4;
             distorter.LerpExposure(lerpTime);
 
             // TODO : swap to 3D world

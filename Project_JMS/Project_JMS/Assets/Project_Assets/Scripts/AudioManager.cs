@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] audioClipsPlayer = new AudioClip[0];
     [SerializeField] private AudioClip[] audioClipsUI = new AudioClip[0];
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
