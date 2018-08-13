@@ -15,10 +15,12 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: e5da992f48dd6a64f92c3a0ee3b8b025
-    name: _Volume
   - guid: cc9c009bec7cd1a4e9193a389c51bf30
     name: _Pitch
+  - guid: e5da992f48dd6a64f92c3a0ee3b8b025
+    name: _Volume
+  - guid: 6e07cfb2e93e4a941b0353da5b0b2a39
+    name: _LowPass
   m_AudioMixerGroupViews:
   - guids:
     - 5125589a62b05644f8118b7380c707a1
@@ -38,6 +40,7 @@ AudioMixerGroupController:
   m_Pitch: cc9c009bec7cd1a4e9193a389c51bf30
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: 244404400839937146}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -67,3 +70,18 @@ AudioMixerSnapshotController:
     3d91c390682ee214688013a1e1ccc93b: 5000
     e5da992f48dd6a64f92c3a0ee3b8b025: -6
   m_TransitionOverrides: {}
+--- !u!244 &244404400839937146
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: bcebaa63655be9f4ebcad844e429111b
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 0ae29292fa442a6489774d59c697e5ec
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 6e07cfb2e93e4a941b0353da5b0b2a39
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
