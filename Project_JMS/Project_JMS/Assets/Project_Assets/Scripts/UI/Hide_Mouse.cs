@@ -20,10 +20,16 @@ public class Hide_Mouse : MonoBehaviour
     {
         if (checkSPD)
         {
-            if (Application.isFocused && !PauseMenu.GamePaused && mC.CurrentSpeed > 0.1f)
+            if (Application.isFocused)
             {
-                Cursor.visible = false;
+                if (mC.CurrentSpeed > 0.01f)
+                {
+                    Cursor.visible = false;
+                }
+                else
+                    Cursor.visible = true;
             }
+
         }
         else if (Application.isFocused)
         {
