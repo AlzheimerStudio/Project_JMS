@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-                        private GameManager gm;
-                        public static bool GamePaused = false;   
-                        private bool changingKey = false;
+    private GameManager gm;
+    public static bool GamePaused = false;
+    private bool changingKey = false;
 
-    [SerializeField]    private Button changeButton;
-    [SerializeField]    private Text keyText;
-                        private int oldFontSize;
+    [SerializeField] private Button changeButton;
+    [SerializeField] private Text keyText;
+    private int oldFontSize;
 
-    [SerializeField]    private GameObject pauseUI;
-    [SerializeField]    private GameObject keybindUI;
+    [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject keybindUI;
 
     private AudioMixer mixer;
 
@@ -26,8 +26,8 @@ public class PauseMenu : MonoBehaviour
         mixer = gm.audioManager.mixer;
     }
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         if (!changingKey)
         {
@@ -65,16 +65,18 @@ public class PauseMenu : MonoBehaviour
         gm.movementController.RestartMovement();
         Time.timeScale = 1f;
         GamePaused = false;
+        Cursor.visible = false;
     }
 
     void Pause()
     {
-        mixer.SetFloat("_LowPass", 2000f);
+        mixer.SetFloat("_LowPass", 600f);
         pauseUI.SetActive(true);
         gm.movementController.StopMovement();
 
         Time.timeScale = 0f;
         GamePaused = true;
+        Cursor.visible = true;
     }
 
     public void QuitGame()
