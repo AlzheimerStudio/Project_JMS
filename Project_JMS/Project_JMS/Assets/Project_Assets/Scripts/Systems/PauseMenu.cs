@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (!keybindUI.activeSelf)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetButtonDown("Cancel"))
                 {
                     if (GamePaused)
                     {

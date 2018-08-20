@@ -50,7 +50,7 @@ public class MovementController : MonoBehaviour
     {
         if (canMove)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Space"))
             {
                 _currentSpeed += (acceleration + _accelerationBonus);
                 _currentSpacebar += 1;
